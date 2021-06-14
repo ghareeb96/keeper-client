@@ -1,8 +1,31 @@
-import React from 'react'
-import "./Auth.scss"
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { signup, signin } from '../../actions/auth';
+import "./Auth.scss";
 
 
 const Auth = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
+    const [formData, setFormData] = useState(initialState);
+    const [isSignUp, setIsSignUp] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if (isSignUp) {
+            console.log(isSignUp)
+        } else {
+            dispatch(signup(formData, history))
+        }
+    }
     return (
         <div className="auth">
             <div className="background"></div>
@@ -12,31 +35,31 @@ const Auth = () => {
                     <div className="form-title">
                         <h1>Sign Up</h1>
                     </div>
-                    <form action="http://localhost:5000/" method="post">
+                    <form action="" method="post">
                         <div className="name-inputs">
                             <div className="form-input firstName">
                                 <h4>First Name</h4>
-                                <input type="text" name="firstName" required />
+                                <input type="text" name="firstName" required onChange={handleChange} />
                             </div>
                             <div className="form-input lastName">
-                                <h4> Last Name</h4>
-                                <input type="text" name="lastName" required />
+                                <h4>Last Name</h4>
+                                <input type="text" name="lastName" required onChange={handleChange} />
                             </div>
                         </div>
                         <div className="form-input email">
-                            <h4 >Email</h4>
-                            <input type="email" name="email" required />
+                            <h4>Email</h4>
+                            <input type="email" name="email" required onChange={handleChange} />
                         </div>
                         <div className="form-input password">
-                            <h4 >Password</h4>
-                            <input type="password" name="password" required />
+                            <h4>Password</h4>
+                            <input type="password" name="password" required onChange={handleChange} />
                         </div>
                         <div className="form-input confirm-password">
-                            <h4 >Confirm Password</h4>
-                            <input type="password" name="confirmPassword" required />
+                            <h4>Confirm Password</h4>
+                            <input type="password" name="confirmPassword" required onChange={handleChange} />
                         </div>
                         <div className="submit-btn">
-                            <button className="btn" type="submit">Submit</button>
+                            <button className="btn" type="submit" onClick={handleSubmit}>Submit</button>
                         </div>
                     </form>
                     <div className="switch-form">
