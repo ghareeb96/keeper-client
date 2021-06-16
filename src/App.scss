@@ -1,3 +1,8 @@
+$primary-bg-color : #fefefe;
+$secondary-bg-color : #eaeaea;
+$contrasting-color : #111111;
+$primary-accent-color : #FF5C00;
+
 * {
     margin: 0;
     padding: 0;
@@ -5,16 +10,34 @@
     font-family: 'Lato', sans-serif;
 }
 
-.btn {
-    border: none;
-    outline: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    letter-spacing: 1px;
+html{
+    overflow-x : hidden;
+}
+body {
+    background : $primary-bg-color;
+}
+
+button{
+    background : none;
+    outline : none;
+    border : none;
     cursor: pointer;
     transition: 0.1s all ease-out;
-
+    
     &:active {
         transform: scale(0.96);
     }
+}
+
+input[type=text]{
+    padding : 0.4rem 0.6rem;
+    outline : none;
+    font-size : 1rem;
+}
+
+
+.icon{
+    width : 40px;
+    height : 40px;
+    fill : $contrasting-color;
 }
