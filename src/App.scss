@@ -2,6 +2,7 @@ $primary-bg-color : #fefefe;
 $secondary-bg-color : #eaeaea;
 $contrasting-color : #111111;
 $primary-accent-color : #FF5C00;
+$secondary-accent-color : #B2DDC6;
 
 * {
     margin: 0;
@@ -29,7 +30,7 @@ button{
     }
 }
 
-input[type=text]{
+input[type=text], textarea{
     padding : 0.4rem 0.6rem;
     outline : none;
     font-size : 1rem;
@@ -40,4 +41,12 @@ input[type=text]{
     width : 40px;
     height : 40px;
     fill : $contrasting-color;
+}
+
+.items-container{
+    margin-top : 30px;
+    display : grid;
+    grid-template-columns: repeat(auto-fill,minmax(220px, 1fr));
+    gap: 1rem;
+
 }

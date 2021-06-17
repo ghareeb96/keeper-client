@@ -14,3 +14,4 @@ export const signup = (formData) => API.post('/users/signup', formData)
 
 export const getNotes = () => API.get('/note')
 export const createNote = (formData) => API.post('/note/add', formData)
+export const deleteNote = (id) => API.delete(`/note/${id}`)

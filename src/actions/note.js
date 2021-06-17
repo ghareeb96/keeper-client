@@ -1,5 +1,22 @@
 import * as api from '../api';
 
+export const getNotes = () => async (dispatch) => {
+
+    try {
+        const {
+            data
+        } = await api.getNotes();
+
+        dispatch({
+            type: 'GET_USER_NOTES',
+            data
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const createNote = (noteData) => async (dispatch) => {
 
     try {
@@ -17,19 +34,20 @@ export const createNote = (noteData) => async (dispatch) => {
     }
 }
 
-export const getNotes = () => async (dispatch) => {
+
+export const deleteNote = (id) => async (dispatch) => {
 
     try {
-        const {
-            data
-        } = await api.getNotes();
+        await api.deleteNote(id);
 
         dispatch({
-            type: 'GET_USER_NOTES',
-            data
+            type: 'DELETE',
+            data : id
         })
 
     } catch (error) {
         console.log(error)
     }
 }
+
+

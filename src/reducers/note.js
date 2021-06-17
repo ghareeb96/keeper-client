@@ -3,6 +3,9 @@ const noteReducer = (notes = [] , action) => {
         case 'CREATE':
             return  [...notes, action?.data]
 
+        case 'DELETE':
+            return  notes.filter(note=> note._id !== action.data);
+
         case 'GET_USER_NOTES':
             return action.data
 
