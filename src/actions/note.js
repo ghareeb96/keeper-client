@@ -51,3 +51,19 @@ export const deleteNote = (id) => async (dispatch) => {
 }
 
 
+export const updateNote = (id, note) => async (dispatch) => {
+
+    try {
+        const {data} = await api.updateNote(id, note);
+
+        dispatch({
+            type: 'UPDATE',
+            data
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
