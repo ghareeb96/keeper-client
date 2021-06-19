@@ -1,12 +1,12 @@
 const noteReducer = (notes = [] , action) => {
     switch (action.type) {
-        case 'CREATE':
+        case 'CREATE_NOTE':
             return  [...notes, action?.data]
 
-        case 'DELETE':
+        case 'DELETE_NOTE':
             return  notes.filter(note=> note._id !== action.data);
 
-        case 'UPDATE':
+        case 'UPDATE_NOTE':
             return  notes.map(note=> note._id === action.data._id ? action.data : note );
 
         case 'GET_USER_NOTES':

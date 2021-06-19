@@ -11,42 +11,343 @@ $secondary-accent-color : #B2DDC6;
     font-family: 'Lato', sans-serif;
 }
 
-html{
-    overflow-x : hidden;
-}
-body {
-    background : $primary-bg-color;
+html {
+    overflow-x: hidden;
 }
 
-button{
-    background : none;
-    outline : none;
-    border : none;
+body {
+    background: $primary-bg-color;
+}
+
+button {
+    background: none;
+    outline: none;
+    border: none;
     cursor: pointer;
     transition: 0.1s all ease-out;
-    
+
     &:active {
         transform: scale(0.96);
     }
 }
 
-input[type=text], textarea{
-    padding : 0.4rem 0.6rem;
-    outline : none;
-    font-size : 1rem;
+input[type=text],
+textarea {
+    padding: 0.4rem 0.6rem;
+    outline: none;
+    font-size: 1rem;
 }
 
 
-.icon{
-    width : 40px;
-    height : 40px;
-    fill : $contrasting-color;
+.icon {
+    width: 40px;
+    height: 40px;
+    fill: $contrasting-color;
 }
 
-.items-container{
-    margin-top : 30px;
-    display : grid;
-    grid-template-columns: repeat(auto-fill,minmax(220px, 1fr));
+.items-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
+
+}
+
+.tab-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .form-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .form-container {
+            width: 500px;
+
+            form.input-form {
+                display: flex;
+                flex-direction: column;
+                background-color: lighten($secondary-bg-color, 8);
+                height: 100%;
+                width: 100%;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 1px 1px 4px;
+                input,
+                textarea {
+                    border: none;
+                    outline: none;
+                    background: none;
+
+                    &[name="title"] {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        width: 100%;
+                        border-bottom: 1px solid $secondary-bg-color;
+                        margin-bottom: 5px;
+                    }
+
+                    &[name="body"],
+                    &[name="description"] {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        width: 100%;
+                        height: auto;
+                        overflow: hidden;
+                        word-wrap: break-word;
+                        resize: none;
+                        color: #222222
+                    }
+                }
+
+                .form-footer {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    button {
+                        font-size: 1rem;
+                        letter-spacing: 1px;
+                        font-weight: 700;
+                        padding: 0.5rem 1rem;
+                        background: $secondary-accent-color;
+                        width: 80px;
+                        border-radius: 5px;
+                        align-self: flex-end;
+                        margin-top: auto;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal {
+
+    .note,
+    .reminder,
+    .task,
+    .shopping {
+        width: 220px;
+        height: 150px;
+        overflow: hidden;
+        padding: 10px;
+        background: lighten($secondary-accent-color, 10);
+        border-radius: 10px;
+        position: relative;
+        transition: all 0.1s ease-out;
+
+        &-data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            input,
+            textarea {
+                pointer-events: none;
+                border: none;
+                outline: none;
+                background: none;
+
+                &[name="title"] {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
+
+                &[name="body"],
+                &[name="description"] {
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                    resize: none;
+                    color: #222222;
+                }
+            }
+
+
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 3px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            bottom: 0;
+            left: 0;
+            background: lighten($secondary-accent-color, 10);
+            background: linear-gradient(180deg, rgba(lighten($secondary-accent-color, 10), 0) 0%, rgba(lighten($secondary-accent-color, 10), 1) 70%);
+        }
+
+
+        .modal-actions {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.2s ease-out;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                width: 15px;
+                height: 15px;
+                pointer-events: none;
+            }
+
+            &:hover {
+                background: darken($secondary-accent-color, 20);
+            }
+        }
+
+        &:hover {
+            .modal-actions {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.modal-open {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(#000, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .note,
+    .reminder,
+    .task,
+    .shopping {
+        z-index: 4;
+        width: 550px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        background-color: lighten($secondary-bg-color, 5);
+        border-radius: 10px;
+
+        &::after {
+            display: none;
+        }
+
+        &:hover {
+            box-shadow: 0 0 0;
+        }
+
+        &-data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+
+
+
+
+            input,
+            textarea {
+                border: none;
+                outline: none;
+                background: none;
+                pointer-events: all;
+
+                &[name="title"] {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    width: 100%;
+                    border-bottom: 1px solid $secondary-bg-color;
+                    margin-bottom: 5px;
+                }
+
+                &[name="body"],
+                &[name="description"] {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                    resize: none;
+                    color: #222222;
+                }
+            }
+
+
+        }
+
+        &-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: auto;
+            border-top: 1px solid $secondary-bg-color;
+            padding-top: 10px;
+
+            .time-data {
+                margin-top: auto;
+                padding-left: 10px;
+
+                span {
+                    font-size: .8rem;
+                    letter-spacing: 1px;
+                    font-weight: 700;
+                    color: #222;
+                }
+            }
+
+            .modal-actions {
+                transition: all 0.2s ease-out;
+                cursor: pointer;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 1;
+                position: static;
+
+                .icon {
+                    width: 15px;
+                    height: 15px;
+                    pointer-events: none;
+                }
+
+                &:hover {
+                    background: darken($secondary-bg-color, 20);
+                }
+            }
+        }
+
+
+
+    }
 
 }

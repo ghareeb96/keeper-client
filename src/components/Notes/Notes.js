@@ -17,6 +17,8 @@ const Notes = () => {
     const handleChange = (e) => {
         setNoteData({ ...noteData, [e.target.name]: e.target.value })
     }
+
+
     const handleCreate = (e) => {
         e.preventDefault()
         dispatch(createNote(noteData));
@@ -29,20 +31,22 @@ const Notes = () => {
 
 
     return (
-        <div className="notes">
+        <div className="tab-page notes-page">
 
             <div className="form-section">
                 <div className="form-container">
 
-                    <form method="post">
+                    <form className='input-form' method="post">
                         <input type="text" name="title" className="form-input" placeholder='Title' onChange={handleChange} value={noteData.title}/>
                         <textarea type="text" rows="4" name="body" className="form-input" placeholder='Take a note...' onChange={handleChange} value={noteData.body}/>
+                        <div className="form-footer">
                         <button type="submit" onClick={handleCreate}>Save</button>
+                        </div>
                     </form>
                 </div>
             </div>
 
-            <div className="notes-section">
+            <div className="items-section notes-section">
                 <div className="items-container notes-container">
                     {
                         notes?.map(note => (

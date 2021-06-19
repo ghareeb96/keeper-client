@@ -25,7 +25,7 @@ export const createNote = (noteData) => async (dispatch) => {
         } = await api.createNote(noteData);
 
         dispatch({
-            type: 'CREATE',
+            type: 'CREATE_NOTE',
             data
         })
 
@@ -41,7 +41,7 @@ export const deleteNote = (id) => async (dispatch) => {
         await api.deleteNote(id);
 
         dispatch({
-            type: 'DELETE',
+            type: 'DELETE_NOTE',
             data : id
         })
 
@@ -57,7 +57,7 @@ export const updateNote = (id, note) => async (dispatch) => {
         const {data} = await api.updateNote(id, note);
 
         dispatch({
-            type: 'UPDATE',
+            type: 'UPDATE_NOTE',
             data
         })
 

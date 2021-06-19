@@ -16,3 +16,8 @@ export const getNotes = () => API.get('/note')
 export const createNote = (formData) => API.post('/note/add', formData)
 export const deleteNote = (id) => API.delete(`/note/${id}`)
 export const updateNote = (id, newNote) => API.patch(`/note/${id}`, newNote)
+
+export const getReminders = () => API.get('/reminder')
+export const createReminder = (formData) => API.post('/reminder/add', formData)
+export const deleteReminder = (id) => API.delete(`/reminder/${id}`)
+export const updateReminder = (id, newReminder) => API.patch(`/reminder/${id}`, newReminder)

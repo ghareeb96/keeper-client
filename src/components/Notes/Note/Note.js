@@ -3,18 +3,14 @@ import "./Note.scss";
 import { ReactComponent as Delete } from './Delete.svg'
 import { useDispatch } from 'react-redux';
 import { deleteNote, updateNote } from '../../../actions/note';
+import moment from 'moment';
 
 
 const Note = ({ data }) => {
     const modalRef = useRef(null);
     const [noteData, setNoteData] = useState({ title: data.title, body: data.body })
     const dispatch = useDispatch();
-    const noteDate = new Date(data.updatedAt).toLocaleString("en-US", {
-        month: "short",
-        day : "numeric",
-        hour : "numeric",
-        minute : "numeric"
-    })
+    const noteDate = moment(data.updatedAt).format('D MMMM YYYY, h:mm:ss')
     
 
     const handleDelete = () => {
@@ -52,7 +48,7 @@ const Note = ({ data }) => {
                     <div className="time-data">
                         <span>{noteDate}</span>
                     </div>
-                    <div className="note-actions" onClick={handleDelete}>
+                    <div className="modal-actions" onClick={handleDelete}>
                         <Delete className="icon" />
                     </div>
                 </div>
