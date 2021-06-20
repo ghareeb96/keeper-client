@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom";
+import decode from 'jwt-decode';
 import './Home.scss';
 import { useDispatch } from 'react-redux';
 import Notes from '../../components/Notes/Notes';
@@ -12,9 +13,8 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 const Home = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile"))?.result);
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
     const [activeTab, setActiveTab] = useState("notes-tab");
-
 
 
     useEffect(() => {
@@ -27,6 +27,17 @@ const Home = () => {
         dispatch({ type: 'LOGOUT' })
         setUser(null)
     }
+
+    useEffect(() => {
+        const token = user?.token;
+        if (token) {
+            const decodedToken = decode(token)
+            if (decodedToken.exp * 1000 < new Date().getTime()) {
+                logout()
+            }
+        }
+    })
+
     const renderedTab = () => {
         switch (activeTab) {
             case 'notes-tab':
@@ -52,7 +63,7 @@ const Home = () => {
                 user ? (
                     <div className="home">
                         <Header
-                            user={user}
+                            user={user.result}
                             logout={logout} />
 
                         <div className="home-body">

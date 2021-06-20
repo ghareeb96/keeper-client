@@ -21,3 +21,8 @@ export const getReminders = () => API.get('/reminder')
 export const createReminder = (formData) => API.post('/reminder/add', formData)
 export const deleteReminder = (id) => API.delete(`/reminder/${id}`)
 export const updateReminder = (id, newReminder) => API.patch(`/reminder/${id}`, newReminder)
+
+export const getTasks = () => API.get('/task')
+export const createTask = (formData) => API.post('/task/add', formData)
+export const deleteTask = (id) => API.delete(`/task/${id}`)
+export const updateTask = (id, newTask) => API.patch(`/task/${id}`, newTask)

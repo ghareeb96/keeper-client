@@ -82,7 +82,7 @@ textarea {
                     outline: none;
                     background: none;
 
-                    &[name="title"] {
+                    &[name="title"],&[name="task"] {
                         font-size: 1.2rem;
                         font-weight: 700;
                         width: 100%;
@@ -156,7 +156,7 @@ textarea {
                 outline: none;
                 background: none;
 
-                &[name="title"] {
+                &[name="title"],&[name="task"] {
                     font-size: 1rem;
                     font-weight: 700;
                     width: 100%;
@@ -278,7 +278,7 @@ textarea {
                 background: none;
                 pointer-events: all;
 
-                &[name="title"] {
+                &[name="title"],&[name="task"] {
                     font-size: 1.2rem;
                     font-weight: 700;
                     width: 100%;

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getReminders, createReminder } from '../../actions/reminder';
 import Reminder from './Reminder/Reminder';
-import moment from 'moment';
+// import moment from 'moment';
 
 
 const Reminders = () => {

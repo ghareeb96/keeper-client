@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import './App.scss';
 import Auth from "./pages/auth/Auth";
 import Home from "./pages/Home/Home";
@@ -7,7 +8,10 @@ import {
   Route,
 } from "react-router-dom";
 
+
 const App = () => {
+  
+  
   return (
     <div className="App">
       <Router>
