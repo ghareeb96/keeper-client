@@ -1,0 +1,67 @@
+@import '../../../App.scss';
+
+$incompleted : rgba(#EB9898, 0.6);
+$completed : rgba(#7AEA92, 0.6);
+
+.modal {
+    .task.incompleted {
+        background: $incompleted;
+    
+    
+        .item-footer{
+            background: lighten($incompleted, 10);
+            background: linear-gradient(180deg, rgba(lighten($incompleted, 10), 0) 0%, rgba(lighten($incompleted, 10), 1) 70%);
+
+            .modal-actions{
+
+                .modal-action {
+                    
+                    &:hover {
+                        background: darken($incompleted, 20);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal {
+    .task.completed {
+        background: $completed;
+        .item-footer{
+            background: lighten($completed, 10);
+            background: linear-gradient(180deg, rgba(lighten($completed, 10), 0) 0%, rgba(lighten($completed, 10), 1) 70%);
+    
+            .modal-actions{
+    
+                .modal-action {
+                    
+                    &:hover {
+                        background: darken($completed, 20);
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+.modal-open{
+    .task.completed, .task.incompleted{
+        background-color: lighten($secondary-bg-color, 5);
+
+        .item-footer{
+            background : none;
+
+            .modal-actions{
+    
+                .modal-action {
+                    
+                    &:hover {
+                        background: darken($secondary-bg-color, 20);
+                    }
+                }
+            }
+        }
+    }
+}

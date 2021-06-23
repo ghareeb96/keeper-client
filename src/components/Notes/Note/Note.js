@@ -10,7 +10,7 @@ const Note = ({ data }) => {
     const modalRef = useRef(null);
     const [noteData, setNoteData] = useState({ title: data.title, body: data.body })
     const dispatch = useDispatch();
-    const noteDate = moment(data.updatedAt).format('D MMMM YYYY, h:mm:ss')
+    const noteDate = moment(data.createdAt).format('D MMMM YYYY, h:mm')
     
 
     const handleDelete = () => {
@@ -44,12 +44,14 @@ const Note = ({ data }) => {
 
                 </div>
 
-                <div className="note-footer">
+                <div className="item-footer">
                     <div className="time-data">
                         <span>{noteDate}</span>
                     </div>
-                    <div className="modal-actions" onClick={handleDelete}>
+                    <div className="modal-actions">
+                        <div className="modal-action" onClick={handleDelete}>
                         <Delete className="icon" />
+                        </div>
                     </div>
                 </div>
 

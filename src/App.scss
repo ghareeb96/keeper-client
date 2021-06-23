@@ -76,13 +76,15 @@ textarea {
                 padding: 10px;
                 border-radius: 10px;
                 box-shadow: 1px 1px 4px;
+
                 input,
                 textarea {
                     border: none;
                     outline: none;
                     background: none;
 
-                    &[name="title"],&[name="task"] {
+                    &[name="title"],
+                    &[name="task"] {
                         font-size: 1.2rem;
                         font-weight: 700;
                         width: 100%;
@@ -140,7 +142,7 @@ textarea {
         background: lighten($secondary-accent-color, 10);
         border-radius: 10px;
         position: relative;
-        transition: all 0.1s ease-out;
+        transition: all 0.15s ease-out;
 
         &-data {
             display: flex;
@@ -156,7 +158,8 @@ textarea {
                 outline: none;
                 background: none;
 
-                &[name="title"],&[name="task"] {
+                &[name="title"],
+                &[name="task"] {
                     font-size: 1rem;
                     font-weight: 700;
                     width: 100%;
@@ -183,46 +186,61 @@ textarea {
             box-shadow: 1px 1px 3px;
         }
 
-        &::after {
-            content: '';
+        .item-footer {
             position: absolute;
-            width: 100%;
-            height: 60px;
             bottom: 0;
             left: 0;
             background: lighten($secondary-accent-color, 10);
             background: linear-gradient(180deg, rgba(lighten($secondary-accent-color, 10), 0) 0%, rgba(lighten($secondary-accent-color, 10), 1) 70%);
-        }
-
-
-        .modal-actions {
-            position: absolute;
-            bottom: 10px;
-            right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             z-index: 1;
             opacity: 0;
             transition: all 0.2s ease-out;
-            cursor: pointer;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100%;
+            padding : 10px;
+            height: 50px;
 
-            .icon {
-                width: 15px;
-                height: 15px;
+            .time-data {
+                opacity: 0;
                 pointer-events: none;
             }
 
-            &:hover {
-                background: darken($secondary-accent-color, 20);
+            .modal-actions {
+                width: auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+
+                .modal-action {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    margin-left: 10px;
+                    transition: all 0.2s ease-out;
+                    cursor: pointer;
+
+                    .icon {
+                        width: 20px;
+                        height: 20px;
+                        pointer-events: none;
+                    }
+
+                    &:hover {
+                        background: darken($secondary-accent-color, 20);
+                    }
+                }
+
             }
         }
 
         &:hover {
-            .modal-actions {
+            .item-footer {
                 opacity: 1;
             }
         }
@@ -278,7 +296,8 @@ textarea {
                 background: none;
                 pointer-events: all;
 
-                &[name="title"],&[name="task"] {
+                &[name="title"],
+                &[name="task"] {
                     font-size: 1.2rem;
                     font-weight: 700;
                     width: 100%;
@@ -302,48 +321,37 @@ textarea {
 
         }
 
-        &-footer {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+        .item-footer {
             height: auto;
-            border-top: 1px solid $secondary-bg-color;
             padding-top: 10px;
+            opacity: 1;
+            background: none;
 
             .time-data {
                 margin-top: auto;
                 padding-left: 10px;
+                opacity: 1;
 
                 span {
-                    font-size: .8rem;
+                    font-size: .7rem;
                     letter-spacing: 1px;
                     font-weight: 700;
-                    color: #222;
+                    color: #555;
                 }
             }
 
             .modal-actions {
-                transition: all 0.2s ease-out;
-                cursor: pointer;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                opacity: 1;
-                position: static;
 
-                .icon {
-                    width: 15px;
-                    height: 15px;
-                    pointer-events: none;
-                }
+                .modal-action {
+                    opacity: 1;
 
-                &:hover {
-                    background: darken($secondary-bg-color, 20);
+
+                    &:hover {
+                        background: darken($secondary-bg-color, 20);
+                    }
                 }
             }
+
         }
 
 

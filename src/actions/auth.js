@@ -35,3 +35,20 @@ export const signup = (formData, history) => async (dispatch) => {
         console.log(error)
     }
 }
+
+export const updatePicture = (id, newUser) => async (dispatch) => {
+
+    try {
+        const {
+            data
+        } = await api.updatePicture(id, newUser);
+
+        dispatch({
+            type: 'UPDATE_PICTURE',
+            data
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}

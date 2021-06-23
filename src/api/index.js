@@ -11,6 +11,7 @@ API.interceptors.request.use((req)=>{
 
 export const signin = (formData) => API.post('/users/signin', formData)
 export const signup = (formData) => API.post('/users/signup', formData)
+export const updatePicture = (id, newUser) => API.patch(`/users/updatePic/${id}`, newUser)
 
 export const getNotes = () => API.get('/note')
 export const createNote = (formData) => API.post('/note/add', formData)
@@ -26,3 +27,4 @@ export const getTasks = () => API.get('/task')
 export const createTask = (formData) => API.post('/task/add', formData)
 export const deleteTask = (id) => API.delete(`/task/${id}`)
 export const updateTask = (id, newTask) => API.patch(`/task/${id}`, newTask)
+export const completeTask = (id, newTask) => API.patch(`/task/complete/${id}`, newTask)

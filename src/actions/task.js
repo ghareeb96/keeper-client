@@ -66,4 +66,19 @@ export const updateTask = (id, task) => async (dispatch) => {
     }
 }
 
+export const completeTask = (id, task) => async (dispatch) => {
+
+    try {
+        const {data} = await api.completeTask(id, task);
+
+        dispatch({
+            type: 'UPDATE_TASK',
+            data
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 

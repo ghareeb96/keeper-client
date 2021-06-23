@@ -1,13 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import './Header.scss'
 import {ReactComponent as Logo} from './Logo.svg'
 import {ReactComponent as Search} from './Search.svg'
-import {ReactComponent as Settings} from './Settings.svg'
-import {ReactComponent as Logout} from './Logout.svg'
 
 
-
-const Header = ({user, logout}) => {
+const Header = ({user}) => {
     return (
         <div className='header'>
             <div className="container">
@@ -29,15 +26,10 @@ const Header = ({user, logout}) => {
 
                 <div className="profile-section">
                     <div className="profile-bar">
-                        <div className="profile-image">
-                            {user.profile_pic? 
-                                (<img src={user.profile_pic} alt="Profile"/>)
-                                :
-                                (<span>{user.name[0]}</span>)}
-                        </div>
                         <h4>{user.name}</h4>
-                                <button><Settings className="icon"/></button>
-                                <button onClick={logout}><Logout className="icon"/></button>
+                        <div className="profile-image">
+                            <img src={user.profile_picture} alt="Profile"/>
+                        </div>
                     </div>
                 </div>
             </div>

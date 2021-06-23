@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom";
 import decode from 'jwt-decode';
 import './Home.scss';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import Notes from '../../components/Notes/Notes';
 import Reminders from '../../components/Reminders/Reminders';
 import Tasks from '../../components/Tasks/Tasks';
-import Shopping from '../../components/Shopping/Shopping';
+import Profile from '../../components/Profile/Profile';
 import Header from '../../components/Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
@@ -15,6 +15,7 @@ const Home = () => {
     const history = useHistory();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
     const [activeTab, setActiveTab] = useState("notes-tab");
+    const userData = useSelector(state => state.auth.authData)
 
 
     useEffect(() => {
@@ -38,6 +39,12 @@ const Home = () => {
         }
     })
 
+    useEffect(()=>{
+        if(userData !== null){
+            setUser(userData)
+        }
+    },[userData])
+
     const renderedTab = () => {
         switch (activeTab) {
             case 'notes-tab':
@@ -49,8 +56,9 @@ const Home = () => {
             case 'tasks-tab':
                 return <Tasks />
 
-            case 'shopping-tab':
-                return <Shopping />
+            case 'profile-tab':
+                return <Profile 
+                />
 
             default:
                 return <Notes />
@@ -64,7 +72,7 @@ const Home = () => {
                     <div className="home">
                         <Header
                             user={user.result}
-                            logout={logout} />
+                        />
 
                         <div className="home-body">
 
@@ -72,6 +80,7 @@ const Home = () => {
                                 <Sidebar
                                     activeTab={activeTab}
                                     setActiveTab={setActiveTab}
+                                    handleLogout={logout}
                                 />
                             </div>
                             <div className="main-container">

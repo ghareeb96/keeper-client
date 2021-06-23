@@ -1,20 +1,21 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import './Sidebar.scss';
 import { ReactComponent as Idea } from './Idea.svg'
 import { ReactComponent as Reminder } from './Reminder.svg'
 import { ReactComponent as Task } from './Task.svg'
-import { ReactComponent as Shopping } from './Shopping.svg'
+import { ReactComponent as Profile } from './Profile.svg'
+import { ReactComponent as Logout } from './Logout.svg'
 
-const Sidebar = ({ activeTab, setActiveTab }) => {
-
-    const handleActiveTab = (e)=>{
-        if(activeTab !== e.target.id){
+const Sidebar = ({ activeTab, setActiveTab, handleLogout }) => {
+    const handleActiveTab = (e) => {
+        if (activeTab !== e.target.id) {
             document.getElementById(activeTab).classList.remove("active")
             setActiveTab(e.target.id)
         }
     }
-    
-    useEffect(()=>{
+
+
+    useEffect(() => {
         document.getElementById(activeTab).classList.add("active")
     }, [activeTab])
 
@@ -32,9 +33,13 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
                 <Task className="icon" />
                 <h4>Tasks</h4>
             </div>
-            <div className="tab shopping-tab" id="shopping-tab" onClick={handleActiveTab}>
-                <Shopping className="icon" />
-                <h4>Shopping List</h4>
+            <div className="tab profile-tab" id="profile-tab" onClick={handleActiveTab}>
+                <Profile className="icon" />
+                <h4>Profile</h4>
+            </div>
+            <div className="tab logout-tab" id="logout-tab" onClick={handleLogout}>
+                <Logout className="icon" />
+                <h4>Logout</h4>
             </div>
         </div>
     )

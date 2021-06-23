@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-// import DateTimePicker from '../dateTimePicker/DateTimePicker'
 import './Tasks.scss';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getTasks, createTask } from '../../actions/task';
 import Task from './Task/Task';
-// import moment from 'moment';
 
 
 const Tasks= ()=> {
@@ -28,17 +26,6 @@ const Tasks= ()=> {
         setTaskData(initialState)
     }
 
-    // const timeChangeHandler = (e) => {
-    //     const date = new Date(e.target.value).toLocaleString("en-US", {
-    //         hour: "numeric",
-    //         year: 'numeric', 
-    //         month: 'numeric', 
-    //         day: 'numeric', 
-    //         minute: 'numeric'
-    //     })
-    //     setTaskData({...taskData})
-    // }
-
     useEffect(() => {
         dispatch(getTasks())
     }, [dispatch])
@@ -53,7 +40,6 @@ const Tasks= ()=> {
             <input type="text" name="task" className="form-input" placeholder='Task' onChange={handleChange} value={taskData.task} />
             <textarea type="text" rows="4" name="description" className="form-input" placeholder='Task Description' onChange={handleChange} value={taskData.description} />
             <div className="form-footer">
-                {/* <DateTimePicker timeChangeHandler={timeChangeHandler} /> */}
                 <button type="submit"
                     onClick={handleCreate}
                 >Save</button>
@@ -68,7 +54,7 @@ const Tasks= ()=> {
     <div className="items-container tasks-container">
         {
             tasks?.map(task => (
-                <Task data={task} />
+                <Task data={task} key={task._id}/>
             ))
         }
     </div>

@@ -50,7 +50,7 @@ const Notes = () => {
                 <div className="items-container notes-container">
                     {
                         notes?.map(note => (
-                            <Note data={note}/>
+                            <Note data={note} key={note._id}/>
                         ))
                     }
                 </div>

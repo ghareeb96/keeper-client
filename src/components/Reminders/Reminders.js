@@ -66,7 +66,7 @@ const Reminders = () => {
                 <div className="items-container notes-container">
                     {
                         reminders?.map(reminder => (
-                            <Reminder data={reminder} />
+                            <Reminder data={reminder} key={reminder._id}/>
                         ))
                     }
                 </div>

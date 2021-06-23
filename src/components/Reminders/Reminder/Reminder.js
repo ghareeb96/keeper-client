@@ -10,8 +10,8 @@ const Reminder = ({ data }) => {
     const modalRef = useRef(null);
     const [reminderData, setReminderData] = useState({ title: data.title, description: data.description })
     const dispatch = useDispatch();
-    const reminderDate = moment(data.updatedAt).format('D MMMM YYYY, h:mm:ss')
-    
+    const reminderDate = moment(data.createdAt).format('D MMMM YYYY, h:mm')
+
 
     const handleDelete = () => {
         dispatch(deleteReminder(data._id))
@@ -22,12 +22,12 @@ const Reminder = ({ data }) => {
     }
 
     const closeModal = (e) => {
-        
-        if(e.target.classList.contains('reminder')){
+
+        if (e.target.classList.contains('reminder')) {
             modalRef.current.classList.add("modal-open")
         }
-        
-        if(e.target.classList.contains('modal-open')){
+
+        if (e.target.classList.contains('modal-open')) {
             dispatch(updateReminder(data._id, reminderData))
             e.target.classList.remove("modal-open")
         }
@@ -44,12 +44,14 @@ const Reminder = ({ data }) => {
 
                 </div>
 
-                <div className="reminder-footer">
+                <div className="item-footer">
                     <div className="time-data">
                         <span>{reminderDate}</span>
                     </div>
-                    <div className="modal-actions" onClick={handleDelete}>
-                        <Delete className="icon" />
+                    <div className="modal-actions">
+                        <div className="modal-action" onClick={handleDelete}>
+                            <Delete className="icon" />
+                        </div>
                     </div>
                 </div>
 
