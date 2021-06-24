@@ -17,12 +17,12 @@ const Header = ({user}) => {
                     </div>
                 </div>
 
-                <div className="search-section">
+                {/* <div className="search-section">
                     <div className="search-bar">
                         <button><Search className="icon"/></button>
                         <input type="text" name="search" placeholder="Search" autoComplete="off"/>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="profile-section">
                     <div className="profile-bar">

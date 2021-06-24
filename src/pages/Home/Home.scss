@@ -19,8 +19,8 @@
         }
 
         .main-container {
-            width : 100%;
-            margin: 70px 0 0 300px;
+            width : calc(100% - 350px);
+            margin: 70px 0 0 auto;
             padding: 2rem;
         }
     }

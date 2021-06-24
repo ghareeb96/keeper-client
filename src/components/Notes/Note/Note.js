@@ -10,7 +10,7 @@ const Note = ({ data }) => {
     const modalRef = useRef(null);
     const [noteData, setNoteData] = useState({ title: data.title, body: data.body })
     const dispatch = useDispatch();
-    const noteDate = moment(data.createdAt).format('D MMMM YYYY, h:mm')
+    const noteDate = moment(data.createdAt).fromNow()
     
 
     const handleDelete = () => {

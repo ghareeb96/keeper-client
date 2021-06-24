@@ -10,7 +10,7 @@ const Reminder = ({ data }) => {
     const modalRef = useRef(null);
     const [reminderData, setReminderData] = useState({ title: data.title, description: data.description })
     const dispatch = useDispatch();
-    const reminderDate = moment(data.createdAt).format('D MMMM YYYY, h:mm')
+    const remindTime = moment(data.remind_time).fromNow();
 
 
     const handleDelete = () => {
@@ -33,7 +33,6 @@ const Reminder = ({ data }) => {
         }
     }
 
-
     return (
         <div className="modal" onClick={closeModal} ref={modalRef}>
             <div className="reminder">
@@ -46,7 +45,12 @@ const Reminder = ({ data }) => {
 
                 <div className="item-footer">
                     <div className="time-data">
-                        <span>{reminderDate}</span>
+                        <span>{
+                            moment().format() > moment(data.remind_time).format() ? 
+                            `Deadline passed ${remindTime}`    
+                            :
+                            `Deadline ${remindTime}`
+                        }</span>
                     </div>
                     <div className="modal-actions">
                         <div className="modal-action" onClick={handleDelete}>

@@ -38,8 +38,9 @@ const Profile = () => {
     useEffect(() => {
         if (base64 !== '') {
             dispatch(updatePicture(user.result._id, { ...user.result, profile_picture: base64 }))
+            setBase64('')
         }
-    }, [base64])
+    }, [base64, dispatch, user.result])
 
     useEffect(() => {
         if (userData !== null) {

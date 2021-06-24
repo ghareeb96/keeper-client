@@ -4,7 +4,7 @@
     height: 70px;
     width: 100vw;
     background: $primary-bg-color;
-    box-shadow: 0 0 8px;
+    box-shadow: 0 0 2px;
 
     .container {
         padding: 0 70px;
@@ -21,7 +21,7 @@
 
             .logo-svg {
                 svg {
-                    fill: $primary-accent-color;
+                    fill: $secondary-accent-color;
                 }
 
                 margin-right : 15px;

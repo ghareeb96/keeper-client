@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import "./Task.scss";
 import { ReactComponent as Delete } from './Delete.svg'
 import { ReactComponent as Check } from './Check.svg'
@@ -13,7 +13,7 @@ const Task = ({ data }) => {
     const modalRef = useRef(null);
     const [taskData, setTaskData] = useState({ task: data.task, description: data.description, is_completed : data.is_completed })
     const dispatch = useDispatch();
-    const taskDate = moment(data.createdAt).format('D MMMM YYYY, h:mm')
+    const taskDate = moment(data.createdAt).fromNow()
 
    
     const handleDelete = () => {

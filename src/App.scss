@@ -1,8 +1,10 @@
 $primary-bg-color : #fefefe;
 $secondary-bg-color : #eaeaea;
 $contrasting-color : #111111;
-$primary-accent-color : #FF5C00;
-$secondary-accent-color : #B2DDC6;
+$primary-accent-color : #94e6bb;
+$secondary-accent-color : #ee9b00;
+$note-accent-color : #e9c80c;
+
 
 * {
     margin: 0;
@@ -116,7 +118,7 @@ textarea {
                         letter-spacing: 1px;
                         font-weight: 700;
                         padding: 0.5rem 1rem;
-                        background: $secondary-accent-color;
+                        background: lighten($primary-accent-color, 8);
                         width: 80px;
                         border-radius: 5px;
                         align-self: flex-end;
@@ -139,7 +141,7 @@ textarea {
         height: 150px;
         overflow: hidden;
         padding: 10px;
-        background: lighten($secondary-accent-color, 10);
+        background: lighten($note-accent-color, 10);
         border-radius: 10px;
         position: relative;
         transition: all 0.15s ease-out;
@@ -190,8 +192,8 @@ textarea {
             position: absolute;
             bottom: 0;
             left: 0;
-            background: lighten($secondary-accent-color, 10);
-            background: linear-gradient(180deg, rgba(lighten($secondary-accent-color, 10), 0) 0%, rgba(lighten($secondary-accent-color, 10), 1) 70%);
+            background: lighten($note-accent-color, 10);
+            background: linear-gradient(180deg, rgba(lighten($note-accent-color, 10), 0) 0%, rgba(lighten($note-accent-color, 10), 1) 70%);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -201,6 +203,7 @@ textarea {
             width: 100%;
             padding : 10px;
             height: 50px;
+            pointer-events: none;
 
             .time-data {
                 opacity: 0;
@@ -224,6 +227,7 @@ textarea {
                     margin-left: 10px;
                     transition: all 0.2s ease-out;
                     cursor: pointer;
+                    pointer-events: all;
 
                     .icon {
                         width: 20px;
@@ -232,7 +236,7 @@ textarea {
                     }
 
                     &:hover {
-                        background: darken($secondary-accent-color, 20);
+                        background: darken($note-accent-color, 10);
                     }
                 }
 
@@ -347,7 +351,7 @@ textarea {
 
 
                     &:hover {
-                        background: darken($secondary-bg-color, 20);
+                        background: darken($secondary-bg-color, 10);
                     }
                 }
             }

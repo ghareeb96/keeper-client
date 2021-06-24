@@ -1,7 +1,7 @@
 @import '../../../App.scss';
 
-$incompleted : rgba(#EB9898, 0.6);
-$completed : rgba(#7AEA92, 0.6);
+$incompleted : #f39595;
+$completed : #90f0a5;
 
 .modal {
     .task.incompleted {
@@ -9,15 +9,15 @@ $completed : rgba(#7AEA92, 0.6);
     
     
         .item-footer{
-            background: lighten($incompleted, 10);
-            background: linear-gradient(180deg, rgba(lighten($incompleted, 10), 0) 0%, rgba(lighten($incompleted, 10), 1) 70%);
+            background: $incompleted;
+            background: linear-gradient(180deg, $incompleted 0%, $incompleted 70%);
 
             .modal-actions{
 
                 .modal-action {
                     
                     &:hover {
-                        background: darken($incompleted, 20);
+                        background: darken($incompleted, 15);
                     }
                 }
             }
@@ -29,15 +29,15 @@ $completed : rgba(#7AEA92, 0.6);
     .task.completed {
         background: $completed;
         .item-footer{
-            background: lighten($completed, 10);
-            background: linear-gradient(180deg, rgba(lighten($completed, 10), 0) 0%, rgba(lighten($completed, 10), 1) 70%);
+            background: $completed;
+            background: linear-gradient(180deg, $completed 0%,$completed 70%);
     
             .modal-actions{
     
                 .modal-action {
                     
                     &:hover {
-                        background: darken($completed, 20);
+                        background: darken($completed, 15);
                     }
                 }
             }
@@ -58,7 +58,7 @@ $completed : rgba(#7AEA92, 0.6);
                 .modal-action {
                     
                     &:hover {
-                        background: darken($secondary-bg-color, 20);
+                        background: darken($secondary-bg-color, 10);
                     }
                 }
             }

@@ -36,12 +36,11 @@
                 }
     
                 label {
-                    // border: 1px solid #707070;
                     display: block;
                     position: relative;
                     width: 180px;
                     border-radius: 3px;
-                    background:darken($secondary-accent-color,15);
+                    background:rgb(34, 123, 150);
                     padding: 0.4rem 0.6rem;
                     display: flex;
                     align-items: center;
@@ -62,7 +61,7 @@
 
         .info{
             margin-bottom : 20px;
-            background: rgba(#bbb, 0.4);
+            background: rgba(rgb(240, 240, 240), 0.4);
             padding : 0.8rem;
             border-radius: 10px;
             h6{

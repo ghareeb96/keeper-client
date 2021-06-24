@@ -5,8 +5,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getReminders, createReminder } from '../../actions/reminder';
 import Reminder from './Reminder/Reminder';
-// import moment from 'moment';
-
+import moment from 'moment';
 
 const Reminders = () => {
     const initialState = { title: '', description: '', creator: '', remind_time: '' }
@@ -28,14 +27,11 @@ const Reminders = () => {
     }
 
     const timeChangeHandler = (e) => {
-        const date = new Date(e.target.value).toLocaleString("en-US", {
-            hour: "numeric",
-            year: 'numeric', 
-            month: 'numeric', 
-            day: 'numeric', 
-            minute: 'numeric'
-        })
-        setReminderData({...reminderData, remind_time : date})
+        if(moment().format() < moment(e.target.value).format()){
+            setReminderData({...reminderData, remind_time :e.target.value})
+        }else{
+            alert('Please enter a valid time')
+        }
     }
 
     useEffect(() => {
@@ -49,7 +45,7 @@ const Reminders = () => {
                 <div className="form-container">
                     <form className='input-form' method="post">
                         <input type="text" name="title" className="form-input" placeholder='Title' onChange={handleChange} value={reminderData.title} />
-                        <textarea type="text" rows="4" name="description" className="form-input" placeholder='Take a note...' onChange={handleChange} value={reminderData.description} />
+                        <textarea type="text" rows="4" name="description" className="form-input" placeholder='Take a reminder...' onChange={handleChange} value={reminderData.description} />
                         <div className="form-footer">
                             <DateTimePicker timeChangeHandler={timeChangeHandler} />
                             <button type="submit"
