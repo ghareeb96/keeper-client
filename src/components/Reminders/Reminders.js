@@ -30,7 +30,7 @@ const Reminders = () => {
         if(moment().format() < moment(e.target.value).format()){
             setReminderData({...reminderData, remind_time :e.target.value})
         }else{
-            alert('Please enter a valid time')
+            alert('Please enter a valid time to remind')
         }
     }
 

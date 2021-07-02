@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.scss'
 import {ReactComponent as Logo} from './Logo.svg'
-import {ReactComponent as Search} from './Search.svg'
+import {ReactComponent as Menu} from './Menu.svg'
 
 
 const Header = ({user}) => {
@@ -17,13 +17,6 @@ const Header = ({user}) => {
                     </div>
                 </div>
 
-                {/* <div className="search-section">
-                    <div className="search-bar">
-                        <button><Search className="icon"/></button>
-                        <input type="text" name="search" placeholder="Search" autoComplete="off"/>
-                    </div>
-                </div> */}
-
                 <div className="profile-section">
                     <div className="profile-bar">
                         <h4>{user.name}</h4>
@@ -31,6 +24,10 @@ const Header = ({user}) => {
                             <img src={user.profile_picture} alt="Profile"/>
                         </div>
                     </div>
+                </div>
+
+                <div className="menu-btn">
+                    <Menu className= 'icon menu-icon'/>
                 </div>
             </div>
         </div>

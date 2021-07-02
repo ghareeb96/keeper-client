@@ -23,7 +23,7 @@ body {
 
 button {
     background: none;
-    outline: none;
+    // outline: none;
     border: none;
     cursor: pointer;
     transition: 0.1s all ease-out;
@@ -36,7 +36,7 @@ button {
 input[type=text],
 textarea {
     padding: 0.4rem 0.6rem;
-    outline: none;
+    // outline: none;
     font-size: 1rem;
 }
 
