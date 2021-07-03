@@ -5,6 +5,10 @@ import {ReactComponent as Menu} from './Menu.svg'
 
 
 const Header = ({user}) => {
+
+    const toggleSidebar = ()=>{
+        document.getElementById('home-body').classList.toggle('sidebar-opened');
+    }
     return (
         <div className='header'>
             <div className="container">
@@ -27,7 +31,7 @@ const Header = ({user}) => {
                 </div>
 
                 <div className="menu-btn">
-                    <Menu className= 'icon menu-icon'/>
+                    <Menu className= 'icon menu-icon' onClick={toggleSidebar}/>
                 </div>
             </div>
         </div>

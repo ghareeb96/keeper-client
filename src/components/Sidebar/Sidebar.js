@@ -12,6 +12,9 @@ const Sidebar = ({ activeTab, setActiveTab, handleLogout }) => {
             document.getElementById(activeTab).classList.remove("active")
             setActiveTab(e.target.id)
         }
+        if(document.getElementById('home-body').classList.contains('sidebar-opened')){
+            document.getElementById('home-body').classList.remove('sidebar-opened')
+        }
     }
 
 

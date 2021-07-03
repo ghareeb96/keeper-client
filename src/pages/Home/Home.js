@@ -74,7 +74,7 @@ const Home = () => {
                             user={user.result}
                         />
 
-                        <div className="home-body">
+                        <div className="home-body sidebar-opened" id='home-body'>
 
                             <div className="sidebar-container">
                                 <Sidebar
