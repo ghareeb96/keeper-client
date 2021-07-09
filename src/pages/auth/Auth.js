@@ -42,10 +42,6 @@ const Auth = () => {
                                 <h1>Keeper</h1>
                             </div>
 
-                            <div className="form-title">
-                                <h1>Sign Up</h1>
-                            </div>
-
                             <div className="form-body">
                                 <form method="post">
                                     <div className="name-inputs">
@@ -71,12 +67,11 @@ const Auth = () => {
                                         <input type="password" name="confirmPassword" required onChange={handleChange} />
                                     </div>
                                     <div className="submit-btn">
-                                        <button className="btn" type="submit" onClick={handleSubmit}>Submit</button>
+                                        <button className="btn" type="submit" onClick={handleSubmit}>Sign Up</button>
                                     </div>
                                 </form>
-                                <div className="switch-form">
-                                    <p>Already have an account ?</p>
-                                    <button onClick={() => setIsSignUp(false)}>Sign in</button>
+                                <div className="switch-btn">
+                                    <button onClick={() => setIsSignUp(false)}>Have an account</button>
                                 </div>
                             </div>
                         </div>
@@ -86,9 +81,7 @@ const Auth = () => {
                             <Logo className='icon logo-icon' />
                             <h1>Keeper</h1>
                         </div>
-                        <div className="form-title">
-                            <h1>Sign In</h1>
-                        </div>
+
                         <div className="form-body">
                             <form action="" method="post">
                                 <div className="form-input email">
@@ -100,12 +93,11 @@ const Auth = () => {
                                     <input type="password" name="password" required onChange={handleChange} />
                                 </div>
                                 <div className="submit-btn">
-                                    <button className="btn" type="submit" onClick={handleSubmit}>Submit</button>
+                                    <button className="btn" type="submit" onClick={handleSubmit}>Sign In</button>
                                 </div>
                             </form>
-                            <div className="switch-form">
-                                <p>Don't have an account ?</p>
-                                <button onClick={() => setIsSignUp(true)}>Sign Up</button>
+                            <div className="switch-btn">
+                                <button onClick={() => setIsSignUp(true)}>Create an account</button>
                             </div>
                         </div>
                     </div>)

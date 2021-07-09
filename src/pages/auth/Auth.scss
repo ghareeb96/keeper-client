@@ -34,7 +34,7 @@
         .form{
             display: flex;
             flex-direction: column;
-            width: 70%;
+            width: 80%;
             margin: 0 auto;
             height : 100%;
 
@@ -56,21 +56,6 @@
                     font-size: 3rem;
                     letter-spacing: 2px;
     
-                }
-            }
-
-            .form-title {
-                height: 60px;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 30px;
-    
-                h1 {
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    letter-spacing: 1px;
                 }
             }
 
@@ -103,7 +88,8 @@
                             font-size: 14px;
                             padding: 0.4rem ;
                             margin-bottom: 14px;
-                            // outline: none;
+                            background : lighten($secondary-bg-color, 3);
+                            border : 1px solid darken($secondary-bg-color, 20);
                         }
             
                     }
@@ -113,30 +99,26 @@
             
                         .btn {
                             width: 100%;
-                            height: 40px;
+                            height: 35px;
                             background-color: $primary-accent-color;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                             font-weight: 700;
-                            text-transform: uppercase;
+                            letter-spacing: 1px;
                         }
                     }
             
                 
             
-                .switch-form {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-top: 5px;
-            
+                .switch-btn {
+                    width : 100%;
+                    
                     button {
-                        background: none;
-                        // outline: none;
+                        margin-top : 20px;
+                        width : 100%;
+                        height : 35px;
+                        background:darken($secondary-bg-color, 5);
                         border: none;
-                        color: rgb(0, 81, 255);
-                        text-decoration : underline;
-                        font-size: 16px;
+                        font-size: 0.8rem;
                         letter-spacing: 1px;
                         font-weight: 700;
                         cursor: pointer;
@@ -179,15 +161,25 @@
     }
 }
 
-@media screen and(max-width : 900px){
+@media screen and(max-width : $mediumScreen){
     .auth {
 
         .form-section {
-            width: 300px;
+            width: 350px;
     
             .form{
-                width: 80%;
     
+                .logo {
+    
+                    .icon{
+                        margin-right : 16px;
+                        width : 30px;
+                    }
+                    h1 {
+                        font-size: 2rem;        
+                    }
+                }
+
                 .form-body{             
 
                 
@@ -220,7 +212,7 @@
         }
     
         .slogan-side {
-            width: calc(100% - 300px);
+            width: calc(100% - 350px);
     
             .slogan-typo {
                 width: 350px;
@@ -239,7 +231,7 @@
     }
 }
 
-@media screen and(max-width : 687px){
+@media screen and(max-width : $smallScreen){
     .auth {
 
 
@@ -253,36 +245,13 @@
             .form{
                 .logo {   
                     height : 60px;
-                    margin-top : 30px;
-    
-                    .icon{
-                        margin-right : 20px;
-                        fill : $secondary-accent-color;
-                        width : 30px;
-                        height : 30px;
-                    }
-                    h1 {
-                        color: black;
-                        font-size: 2.4rem;
-                        letter-spacing: 2px;
-        
-                    }
-                }
-
-                .form-title {
-                    height: 40px;
-                    margin-bottom: 20px;
-        
-                    h1 {
-                        font-size: 1.2rem;
-                    }
-                }
+                    margin-bottom : 10px;
+                 }
             }
         }
     
         .slogan-side {
             display : none;
-
         }
     }
 }

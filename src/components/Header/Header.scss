@@ -34,43 +34,6 @@
             }
         }
 
-        // .search-section {
-        //     .search-bar {
-        //         background-color: $secondary-bg-color;
-        //         display: flex;
-        //         align-items: center;
-        //         padding: 7px 10px;
-        //         border-radius: 10px;
-
-        //         input {
-        //             margin-left: 15px;
-        //             background: none;
-        //             border: none;
-        //             padding: 0;
-        //             width: 350px;
-        //         }
-
-        //         button {
-        //             display: flex;
-        //             align-items: center;
-        //             justify-content: center;
-        //             width: 30px;
-        //             height: 30px;
-        //             border-radius: 50%;
-        //             transition: all 0.2s ease-out;
-
-        //             &:hover {
-        //                 background: #cccccc;
-        //             }
-
-        //             .icon {
-        //                 width: 15px;
-        //                 height: 15px;
-        //             }
-        //         }
-        //     }
-        // }
-
         .profile-section {
             .profile-bar {
                 display: flex;
@@ -113,7 +76,7 @@
 }
 
 
-@media screen and (max-width : 800px) {
+@media screen and (max-width : $smallScreen){
     .header {
 
 

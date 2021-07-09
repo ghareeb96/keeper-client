@@ -14,7 +14,7 @@ const Header = ({user}) => {
             <div className="container">
                 <div className="logo-section">
                     <div className="logo-svg">
-                        <Logo className="icon"/>
+                        <Logo className="icon logo-icon"/>
                     </div>
                     <div className="logo-typo">
                         <h2>Keeper</h2>

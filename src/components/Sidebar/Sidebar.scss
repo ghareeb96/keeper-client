@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .sidebar {
-    width: 300px;
+    width: $sidebarWidth;
     display: flex;
     flex-direction: column;
     
@@ -22,8 +22,8 @@
         
         .icon{
             margin-right : 15px;
-            width : 30px;
-            height : 30px;
+            width : 24px;
+            height : 24px;
             pointer-events: none;
         }
         
@@ -46,9 +46,8 @@
 
 
 
-@media screen and (max-width : 800px){
+@media screen and (max-width : $smallScreen){
     .sidebar{
-        width: 250px;
         .tab{
             padding : 10px 0 10px 30px;
 

@@ -13,26 +13,27 @@
 
         .sidebar-container {
             transition: all 0.2s linear;
-            height: calc(100vh - 70px);
+            // height: calc(100vh - $headerHeight);
+            padding-top : $headerHeight;
+            height: 100vh;
             position: fixed;
             left: 0;
-            bottom: 0;
+            top: 0;
             z-index: 2;
         }
 
         .main-container {
             transition: all 0.2s linear;
-            width: calc(100% - 350px);
-            margin: 70px 0 0 auto;
+            width: calc(100% - 250px);
+            margin: $headerHeight 0 0 auto;
             padding: 30px;
-
         }
     }
 
     
 }
 
-@media screen and (max-width : 800px){
+@media screen and (max-width : $smallScreen){
     
     .home {
     
