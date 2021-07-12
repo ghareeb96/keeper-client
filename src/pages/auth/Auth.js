@@ -35,11 +35,11 @@ const Auth = () => {
             <div className="form-section">
                 {
                     isSignUp ? (
-                        <div className="signup-form form">
+                        <div className="signup-form form-container">
 
-                            <div className="logo">
+                            <div className="logo-section">
                                 <Logo className='icon logo-icon' />
-                                <h1>Keeper</h1>
+                                <h2>Keeper</h2>
                             </div>
 
                             <div className="form-body">
@@ -75,11 +75,13 @@ const Auth = () => {
                                 </div>
                             </div>
                         </div>
-                    ) : (<div className="signin-form form">
+                    ) : (
+                    
+                    <div className="signin-form form-container">
 
-                        <div className="logo">
+                        <div className="logo-section">
                             <Logo className='icon logo-icon' />
-                            <h1>Keeper</h1>
+                            <h2>Keeper</h2>
                         </div>
 
                         <div className="form-body">

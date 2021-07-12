@@ -14,25 +14,25 @@
         justify-content: space-between;
         height: 100%;
 
-        .logo-section {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+        // .logo-section {
+        //     display: flex;
+        //     flex-direction: row;
+        //     align-items: center;
 
-            .logo-svg {
-                svg {
-                    fill: $secondary-accent-color;
-                }
+        //     .logo-svg {
+        //         svg {
+        //             fill: $secondary-accent-color;
+        //         }
 
-                margin-right : 15px;
-            }
+        //         margin-right : 15px;
+        //     }
 
-            .logo-typo {
-                h2 {
-                    letter-spacing: 1px;
-                }
-            }
-        }
+        //     .logo-typo {
+        //         h2 {
+        //             letter-spacing: 1px;
+        //         }
+        //     }
+        // }
 
         .profile-section {
             .profile-bar {
