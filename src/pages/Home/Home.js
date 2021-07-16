@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from "react-router-dom";
 import decode from 'jwt-decode';
 import './Home.scss';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Notes from '../../components/Notes/Notes';
 import Reminders from '../../components/Reminders/Reminders';
 import Tasks from '../../components/Tasks/Tasks';
 import Profile from '../../components/Profile/Profile';
 import Header from '../../components/Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import Auth from '../auth/Auth';
+
 
 const Home = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
     const [activeTab, setActiveTab] = useState("notes-tab");
     const userData = useSelector(state => state.auth.authData)
 
-
-    useEffect(() => {
-        if (user === undefined || !user) {
-            history.push('/Sign')
-        }
-    }, [history, user])
+    const addAutoResize = () => {
+        document.querySelectorAll('[data-autoresize]').forEach(function (element) {
+            element.style.boxSizing = 'border-box';
+            console.log(element)
+            var offset = element.offsetHeight - element.clientHeight;
+            element.addEventListener('input', function (event) {
+                event.target.style.height = 'auto';
+                event.target.style.height = event.target.scrollHeight + offset + 'px';
+            });
+            element.removeAttribute('data-autoresize');
+        });
+    }
 
     const logout = () => {
         dispatch({ type: 'LOGOUT' })
@@ -39,11 +45,15 @@ const Home = () => {
         }
     })
 
-    useEffect(()=>{
-        if(userData !== null){
+    useEffect(() => {
+        if (userData !== null) {
             setUser(userData)
         }
-    },[userData])
+    }, [userData])
+
+    useEffect(() => {
+        addAutoResize()
+    },[dispatch, user])
 
     const renderedTab = () => {
         switch (activeTab) {
@@ -57,7 +67,7 @@ const Home = () => {
                 return <Tasks />
 
             case 'profile-tab':
-                return <Profile 
+                return <Profile
                 />
 
             default:
@@ -85,13 +95,12 @@ const Home = () => {
                             </div>
                             <div className="main-container">
                                 {renderedTab()}
-
                             </div>
 
                         </div>
                     </div >
                 ) : (
-                        ""
+                        <Auth/>
                     )
             }
         </>

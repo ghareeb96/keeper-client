@@ -46,7 +46,7 @@ const Task = ({ data }) => {
                 <div className="task-data">
 
                     <input type="text" value={taskData.task} name='task' onChange={handleChange} />
-                    <textarea type="text" rows="4" value={taskData.description} name='description' onChange={handleChange} />
+                    <textarea data-autoresize type="text" rows="4" value={taskData.description} name='description' onChange={handleChange} />
 
                 </div>
 

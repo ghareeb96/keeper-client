@@ -45,7 +45,7 @@ const Reminders = () => {
                 <div className="form-container">
                     <form className='input-form' method="post">
                         <input type="text" name="title" className="form-input" placeholder='Title' onChange={handleChange} value={reminderData.title} />
-                        <textarea type="text" rows="4" name="description" className="form-input" placeholder='Take a reminder...' onChange={handleChange} value={reminderData.description} />
+                        <textarea data-autoresize type="text" rows="4" name="description" className="form-input" placeholder='Take a reminder...' onChange={handleChange} value={reminderData.description} />
                         <div className="form-footer">
                             <DateTimePicker timeChangeHandler={timeChangeHandler} />
                             <button type="submit"

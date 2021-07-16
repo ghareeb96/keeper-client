@@ -48,8 +48,8 @@ textarea {
 
     .logo-icon {
         margin-right: 15px;
-        width : 40px;
-        height : 40px;
+        width: 40px;
+        height: 40px;
         fill: $logo-color;
     }
 
@@ -64,9 +64,9 @@ textarea {
 .items-container {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1rem;
-
+    justify-items: center;
 }
 
 .tab-page {
@@ -81,13 +81,15 @@ textarea {
         align-items: center;
 
         .form-container {
-            width: 500px;
+            width : 50%;
+            @include formWidth;
+            height: auto;
 
             form.input-form {
                 display: flex;
                 flex-direction: column;
                 background-color: lighten($secondary-bg-color, 8);
-                height: 100%;
+                height: auto;
                 width: 100%;
                 padding: 10px;
                 border-radius: 10px;
@@ -113,11 +115,11 @@ textarea {
                         font-size: 1rem;
                         font-weight: 400;
                         width: 100%;
-                        height: auto;
+                        height: fit-content;
                         overflow: hidden;
                         word-wrap: break-word;
                         resize: none;
-                        color: #222222
+                        color: #222222;
                     }
                 }
 
@@ -146,13 +148,13 @@ textarea {
 }
 
 .modal {
-
     .note,
     .reminder,
     .task,
     .shopping {
-        width: 220px;
-        height: 150px;
+        width: 400px;
+        @include itemWidth;
+        height: 200px;
         overflow: hidden;
         padding: 10px;
         background: lighten($note-accent-color, 10);
@@ -164,7 +166,7 @@ textarea {
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 100%;
+            height: auto;
             pointer-events: none;
 
             input,
@@ -187,11 +189,12 @@ textarea {
                     font-size: 0.9rem;
                     font-weight: 400;
                     width: 100%;
-                    height: auto;
+                    height: fit-content;
                     overflow: hidden;
                     word-wrap: break-word;
                     resize: none;
                     color: #222222;
+
                 }
             }
 
@@ -207,16 +210,15 @@ textarea {
             bottom: 0;
             left: 0;
             background: lighten($note-accent-color, 10);
-            background: linear-gradient(180deg, rgba(lighten($note-accent-color, 10), 0) 0%, rgba(lighten($note-accent-color, 10), 1) 70%);
+            background: linear-gradient(180deg, rgba(lighten($note-accent-color, 10), 0) 0%, rgba(lighten($note-accent-color, 10), 1) 40%);
             display: flex;
             align-items: center;
             justify-content: space-between;
             z-index: 1;
-            opacity: 0;
             transition: all 0.2s ease-out;
             width: 100%;
             padding: 10px;
-            height: 50px;
+            height: 60px;
             pointer-events: none;
 
             .time-data {
@@ -230,6 +232,8 @@ textarea {
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-end;
+                opacity: 0;
+                transition: all 0.2s ease-out;
 
                 .modal-action {
                     display: flex;
@@ -239,9 +243,9 @@ textarea {
                     width: 40px;
                     border-radius: 50%;
                     margin-left: 10px;
-                    transition: all 0.2s ease-out;
                     cursor: pointer;
                     pointer-events: all;
+                    transition: all 0.2s ease-out;
 
                     .icon {
                         width: 20px;
@@ -259,7 +263,9 @@ textarea {
 
         &:hover {
             .item-footer {
-                opacity: 1;
+                .modal-actions{
+                    opacity: 1;
+                }
             }
         }
     }
@@ -281,9 +287,10 @@ textarea {
     .reminder,
     .task,
     .shopping {
+
         z-index: 4;
         width: 550px;
-        height: 280px;
+        height: auto;
         display: flex;
         flex-direction: column;
         padding: 10px;
@@ -303,9 +310,7 @@ textarea {
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 100%;
-
-
+            height: auto;
 
 
             input,
@@ -329,8 +334,9 @@ textarea {
                     font-size: 1rem;
                     font-weight: 400;
                     width: 100%;
-                    height: auto;
-                    overflow: hidden;
+                    height: fit-content;
+                    max-height : 400px;
+                    overflow: auto;
                     word-wrap: break-word;
                     resize: none;
                     color: #222222;
@@ -341,7 +347,7 @@ textarea {
         }
 
         .item-footer {
-            height: auto;
+            position: relative;
             padding-top: 10px;
             opacity: 1;
             background: none;
@@ -375,6 +381,21 @@ textarea {
 
 
 
+    }
+
+}
+
+@media screen and (max-width : $mediumScreen) {
+
+}
+
+
+@media screen and (max-width : $xSmallScreen) {
+    
+    .items-container {
+        display : flex;
+        flex-direction: column;
+        align-items: center;
     }
 
 }

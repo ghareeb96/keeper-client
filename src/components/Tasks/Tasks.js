@@ -38,7 +38,7 @@ const Tasks= ()=> {
     <div className="form-container">
         <form className='input-form' method="post">
             <input type="text" name="task" className="form-input" placeholder='Task' onChange={handleChange} value={taskData.task} />
-            <textarea type="text" rows="4" name="description" className="form-input" placeholder='Task Description' onChange={handleChange} value={taskData.description} />
+            <textarea data-autoresize type="text" name="description" className="form-input" placeholder='Task Description' onChange={handleChange} value={taskData.description} />
             <div className="form-footer">
                 <button type="submit"
                     onClick={handleCreate}

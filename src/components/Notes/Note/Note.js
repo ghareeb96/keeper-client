@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import "./Note.scss";
 import { ReactComponent as Delete } from './Delete.svg'
 import { useDispatch } from 'react-redux';
@@ -11,7 +11,7 @@ const Note = ({ data }) => {
     const [noteData, setNoteData] = useState({ title: data.title, body: data.body })
     const dispatch = useDispatch();
     const noteDate = moment(data.createdAt).fromNow()
-    
+ 
 
     const handleDelete = () => {
         dispatch(deleteNote(data._id))
@@ -32,15 +32,24 @@ const Note = ({ data }) => {
             e.target.classList.remove("modal-open")
         }
     }
+    const resize = (e)=>{
+        var offset = e.scrollHeight ;  
+        e.style.height = 'auto';   
+        e.style.height =   offset + 'px'   
+    }
+
+    useEffect(()=>{
+        resize(document.getElementById(data._id));
+    })
 
 
     return (
-        <div className="modal" onClick={closeModal} ref={modalRef}>
+        <div className="modal" onClick={closeModal} ref={modalRef} >
             <div className="note">
                 <div className="note-data">
 
                     <input type="text" value={noteData.title} name='title' onChange={handleChange} />
-                    <textarea type="text" rows="4" value={noteData.body} name='body' onChange={handleChange} />
+                    <textarea data-autoresize type="text" value={noteData.body} name='body' onChange={handleChange} id={data._id}/>
 
                 </div>
 

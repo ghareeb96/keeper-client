@@ -19,3 +19,31 @@ $xSmallScreen : 560px;
 //* Sizes
 $headerHeight : 70px;
 $sidebarWidth : 250px;
+
+
+
+@mixin formWidth() {
+    @media screen and (max-width: $largeScreen) {
+        width : 500px;
+    }
+    
+    @media screen and (max-width: $mediumScreen) {
+        width : 70vw;
+    }
+
+    @media screen and (max-width: $xSmallScreen) {
+        width : 300px;
+    }
+}
+
+
+@mixin itemWidth() {
+    @media screen and (max-width: $mediumScreen) {
+        width : 70vw;
+    }
+    
+    
+    @media screen and (max-width: $xSmallScreen) {
+        width : 300px;
+    }
+}
