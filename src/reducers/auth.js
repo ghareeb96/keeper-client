@@ -1,4 +1,4 @@
-const authReducer = (state = { authData: null }, action) => {
+const authReducer = (state = { authData: null , authError : null}, action) => {
     switch (action.type) {
         case 'AUTH':
             localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
@@ -7,6 +7,12 @@ const authReducer = (state = { authData: null }, action) => {
         case 'LOGOUT':
             localStorage.clear();
             return { ...state, authData: null };
+
+        case 'AUTH_ERROR':
+            return {...state, authError : action?.data }
+
+        case 'CLEAR_ERROR':
+            return {...state, authError : null }
 
         case 'UPDATE_PICTURE':
             const user = JSON.parse(localStorage.getItem('profile'))

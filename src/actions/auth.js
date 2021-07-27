@@ -1,6 +1,6 @@
 import * as api from '../api';
 
-export const signin = (formData, history) => async (dispatch) => {
+export const signin = (formData) => async (dispatch) => {
 
     try {
         const {
@@ -12,13 +12,27 @@ export const signin = (formData, history) => async (dispatch) => {
             data
         })
 
-        history.push('/')
     } catch (error) {
-        console.log(error)
+
+
+        dispatch({
+            type: 'AUTH_ERROR',
+            data: error.response.data.message
+        })
+
+
+
     }
 }
 
-export const signup = (formData, history) => async (dispatch) => {
+export const clearError = () => async (dispatch)=>{
+    console.log("reached")
+    dispatch({
+        type : 'CLEAR_ERROR'
+    })
+}
+
+export const signup = (formData) => async (dispatch) => {
 
     try {
         const {
@@ -30,9 +44,11 @@ export const signup = (formData, history) => async (dispatch) => {
             data
         })
 
-        history.push('/')
     } catch (error) {
-        console.log(error)
+        dispatch({
+            type: 'AUTH_ERROR',
+            data: error.response.data.message
+        })
     }
 }
 
