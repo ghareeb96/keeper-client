@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/keeper-client/static/css/main.cf43ed4b.chunk.css",
-    "main.js": "/keeper-client/static/js/main.ef2c6e84.chunk.js",
-    "main.js.map": "/keeper-client/static/js/main.ef2c6e84.chunk.js.map",
+    "main.css": "/keeper-client/static/css/main.3ee48d53.chunk.css",
+    "main.js": "/keeper-client/static/js/main.925e17c7.chunk.js",
+    "main.js.map": "/keeper-client/static/js/main.925e17c7.chunk.js.map",
     "runtime-main.js": "/keeper-client/static/js/runtime-main.d32ff17f.js",
     "runtime-main.js.map": "/keeper-client/static/js/runtime-main.d32ff17f.js.map",
-    "static/js/2.8dd03abf.chunk.js": "/keeper-client/static/js/2.8dd03abf.chunk.js",
-    "static/js/2.8dd03abf.chunk.js.map": "/keeper-client/static/js/2.8dd03abf.chunk.js.map",
+    "static/js/2.0486ea90.chunk.js": "/keeper-client/static/js/2.0486ea90.chunk.js",
+    "static/js/2.0486ea90.chunk.js.map": "/keeper-client/static/js/2.0486ea90.chunk.js.map",
     "index.html": "/keeper-client/index.html",
-    "static/css/main.cf43ed4b.chunk.css.map": "/keeper-client/static/css/main.cf43ed4b.chunk.css.map",
-    "static/js/2.8dd03abf.chunk.js.LICENSE.txt": "/keeper-client/static/js/2.8dd03abf.chunk.js.LICENSE.txt",
+    "static/css/main.3ee48d53.chunk.css.map": "/keeper-client/static/css/main.3ee48d53.chunk.css.map",
+    "static/js/2.0486ea90.chunk.js.LICENSE.txt": "/keeper-client/static/js/2.0486ea90.chunk.js.LICENSE.txt",
     "static/media/Check.8f6811c2.svg": "/keeper-client/static/media/Check.8f6811c2.svg",
     "static/media/Delete.9dc57184.svg": "/keeper-client/static/media/Delete.9dc57184.svg",
     "static/media/Idea.6166db58.svg": "/keeper-client/static/media/Idea.6166db58.svg",
@@ -18,14 +18,15 @@
     "static/media/Menu.51815719.svg": "/keeper-client/static/media/Menu.51815719.svg",
     "static/media/Profile.43d970e6.svg": "/keeper-client/static/media/Profile.43d970e6.svg",
     "static/media/Redo.02761356.svg": "/keeper-client/static/media/Redo.02761356.svg",
-    "static/media/Reminder.a3ec858f.svg": "/keeper-client/static/media/Reminder.a3ec858f.svg",
     "static/media/Task.89fb6496.svg": "/keeper-client/static/media/Task.89fb6496.svg",
-    "static/media/Auth.scss": "/keeper-client/static/media/background.00810737.png"
+    "static/media/Auth.scss": "/keeper-client/static/media/background.00810737.png",
+    "static/media/dark.3faf560f.svg": "/keeper-client/static/media/dark.3faf560f.svg",
+    "static/media/light.ee748d9f.svg": "/keeper-client/static/media/light.ee748d9f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d32ff17f.js",
-    "static/js/2.8dd03abf.chunk.js",
-    "static/css/main.cf43ed4b.chunk.css",
-    "static/js/main.ef2c6e84.chunk.js"
+    "static/js/2.0486ea90.chunk.js",
+    "static/css/main.3ee48d53.chunk.css",
+    "static/js/main.925e17c7.chunk.js"
   ]
 }
