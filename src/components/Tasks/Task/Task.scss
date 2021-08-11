@@ -1,67 +1,27 @@
 @import '../../../App.scss';
 
-$incompleted : #f39595;
-$completed : #90f0a5;
 
 .modal {
-    .task.incompleted {
-        background: $incompleted;
+    .incompleted {
+        background: var(--task-incompleted-color);
     
     
         .item-footer{
-            background: $incompleted;
-            background: linear-gradient(180deg, $incompleted 0%, $incompleted 70%);
-
-            .modal-actions{
-
-                .modal-action {
-                    
-                    &:hover {
-                        background: darken($incompleted, 15);
-                    }
-                }
-            }
+            background: var(--task-incompleted-color);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--task-incompleted-color) 50%);
         }
     }
 }
 
 .modal {
-    .task.completed {
-        background: $completed;
+    .completed {
+        background: var(--task-completed-color);
+    
         .item-footer{
-            background: $completed;
-            background: linear-gradient(180deg, $completed 0%,$completed 70%);
-    
-            .modal-actions{
-    
-                .modal-action {
-                    
-                    &:hover {
-                        background: darken($completed, 15);
-                    }
-                }
-            }
+            background: var(--task-completed-color);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--task-completed-color) 50%);
+
         }
     }
 
-
-}
-.modal-open{
-    .task.completed, .task.incompleted{
-        background-color: lighten($secondary-bg-color, 5);
-
-        .item-footer{
-            background : none;
-
-            .modal-actions{
-    
-                .modal-action {
-                    
-                    &:hover {
-                        background: darken($secondary-bg-color, 10);
-                    }
-                }
-            }
-        }
-    }
 }

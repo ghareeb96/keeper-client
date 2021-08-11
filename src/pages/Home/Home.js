@@ -3,7 +3,7 @@ import decode from 'jwt-decode';
 import './Home.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import Notes from '../../components/Notes/Notes';
-import Reminders from '../../components/Reminders/Reminders';
+// import Reminders from '../../components/Reminders/Reminders';
 import Tasks from '../../components/Tasks/Tasks';
 import Profile from '../../components/Profile/Profile';
 import Header from '../../components/Header/Header';
@@ -20,7 +20,6 @@ const Home = () => {
     const addAutoResize = () => {
         document.querySelectorAll('[data-autoresize]').forEach(function (element) {
             element.style.boxSizing = 'border-box';
-            console.log(element)
             var offset = element.offsetHeight - element.clientHeight;
             element.addEventListener('input', function (event) {
                 event.target.style.height = 'auto';
@@ -31,8 +30,9 @@ const Home = () => {
     }
 
     const logout = () => {
-        dispatch({ type: 'LOGOUT' })
         setUser(null)
+        dispatch({ type: 'LOGOUT' })
+        document.getElementsByTagName('body')[0].classList.remove('dark')
     }
 
     useEffect(() => {
@@ -52,16 +52,24 @@ const Home = () => {
     }, [userData])
 
     useEffect(() => {
+        if (user !== null) {
+            const body = document.getElementsByTagName('body')[0]
+            user.result.darkTheme? body.classList.add('dark') : 
+            body.classList.remove('dark')
+        }
+    }, [user])
+
+    useEffect(() => {
         addAutoResize()
-    },[dispatch, user])
+    })
 
     const renderedTab = () => {
         switch (activeTab) {
             case 'notes-tab':
                 return <Notes />
 
-            case 'reminders-tab':
-                return <Reminders />
+            // case 'reminders-tab':
+            //     return <Reminders />
 
             case 'tasks-tab':
                 return <Tasks />
@@ -100,7 +108,7 @@ const Home = () => {
                         </div>
                     </div >
                 ) : (
-                        <Auth/>
+                        <Auth />
                     )
             }
         </>

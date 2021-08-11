@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import './Sidebar.scss';
 import { ReactComponent as Idea } from './Idea.svg'
-import { ReactComponent as Reminder } from './Reminder.svg'
+// import { ReactComponent as Reminder } from './Reminder.svg'
 import { ReactComponent as Task } from './Task.svg'
 import { ReactComponent as Profile } from './Profile.svg'
 import { ReactComponent as Logout } from './Logout.svg'
+import Switcher from '../Switcher/Switcher';
 
 const Sidebar = ({ activeTab, setActiveTab, handleLogout }) => {
     const handleActiveTab = (e) => {
@@ -12,7 +13,7 @@ const Sidebar = ({ activeTab, setActiveTab, handleLogout }) => {
             document.getElementById(activeTab).classList.remove("active")
             setActiveTab(e.target.id)
         }
-        if(document.getElementById('home-body').classList.contains('sidebar-opened')){
+        if (document.getElementById('home-body').classList.contains('sidebar-opened')) {
             document.getElementById('home-body').classList.remove('sidebar-opened')
         }
     }
@@ -28,10 +29,10 @@ const Sidebar = ({ activeTab, setActiveTab, handleLogout }) => {
                 <Idea className="icon" />
                 <h4>Notes</h4>
             </div>
-            <div className="tab reminders-tab" id="reminders-tab" onClick={handleActiveTab}>
+            {/* <div className="tab reminders-tab" id="reminders-tab" onClick={handleActiveTab}>
                 <Reminder className="icon" />
                 <h4>Reminders</h4>
-            </div>
+            </div> */}
             <div className="tab Tasks-tab" id="tasks-tab" onClick={handleActiveTab}>
                 <Task className="icon" />
                 <h4>Tasks</h4>
@@ -43,6 +44,9 @@ const Sidebar = ({ activeTab, setActiveTab, handleLogout }) => {
             <div className="tab logout-tab" id="logout-tab" onClick={handleLogout}>
                 <Logout className="icon" />
                 <h4>Logout</h4>
+            </div>
+            <div className="theme-switcher">
+                <Switcher />
             </div>
         </div>
     )

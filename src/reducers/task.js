@@ -12,6 +12,10 @@ const taskReducer = (tasks = [] , action) => {
         case 'GET_USER_TASKS':
             return action.data
 
+            case 'LOGOUT':
+                console.log('reached')
+                return tasks = []
+
         default:
             return tasks;
     };

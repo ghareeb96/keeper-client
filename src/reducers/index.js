@@ -3,9 +3,9 @@ import {
 } from 'redux';
 import auth from './auth';
 import notes from './note';
-import reminders from './reminder';
+// import reminders from './reminder';
 import tasks from './task'
 
 export default combineReducers({
-    auth, notes, reminders,tasks
+    auth, notes,tasks
 });

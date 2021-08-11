@@ -12,6 +12,10 @@ const noteReducer = (notes = [] , action) => {
         case 'GET_USER_NOTES':
             return action.data
 
+        case 'LOGOUT':
+                console.log('reached')
+                return notes = []
+
         default:
             return notes;
     };

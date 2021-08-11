@@ -32,6 +32,7 @@ const Note = ({ data }) => {
             e.target.classList.remove("modal-open")
         }
     }
+    
     const resize = (e)=>{
         var offset = e.scrollHeight ;  
         e.style.height = 'auto';   
@@ -45,8 +46,8 @@ const Note = ({ data }) => {
 
     return (
         <div className="modal" onClick={closeModal} ref={modalRef} >
-            <div className="note">
-                <div className="note-data">
+            <div className="item note">
+                <div className="item-data">
 
                     <input type="text" value={noteData.title} name='title' onChange={handleChange} />
                     <textarea data-autoresize type="text" value={noteData.body} name='body' onChange={handleChange} id={data._id}/>

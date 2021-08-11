@@ -13,6 +13,17 @@ const Tasks= ()=> {
     const dispatch = useDispatch();
     const tasks = useSelector((state) => state.tasks);
 
+    // const addAutoResize = () => {
+    //     document.querySelectorAll('[data-autoresize]').forEach(function (element) {
+    //         element.style.boxSizing = 'border-box';
+    //         var offset = element.offsetHeight - element.clientHeight;
+    //         element.addEventListener('input', function (event) {
+    //             event.target.style.height = 'auto';
+    //             event.target.style.height = event.target.scrollHeight + offset + 'px';
+    //         });
+    //         element.removeAttribute('data-autoresize');
+    //     });
+    // }
 
     const handleChange = (e) => {
         setTaskData({ ...taskData, [e.target.name]: e.target.value })
@@ -30,6 +41,9 @@ const Tasks= ()=> {
         dispatch(getTasks())
     }, [dispatch])
 
+    //  useEffect(() => {
+    //     addAutoResize()
+    // },[tasks, dispatch])
 
     return (
 <div className="tab-page tasks-page">

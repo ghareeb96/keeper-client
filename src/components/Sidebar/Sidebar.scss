@@ -16,7 +16,7 @@
         transition : all 0.2s ease-out;
         cursor: pointer;
         &:hover{
-            background : $secondary-bg-color;
+            background : var(--secondary-background-color);
         }
         
         

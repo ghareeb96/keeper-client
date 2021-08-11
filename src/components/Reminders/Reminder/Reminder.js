@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef,useEffect } from 'react'
 import "./Reminder.scss";
 import { ReactComponent as Delete } from './Delete.svg'
 import { useDispatch } from 'react-redux';
@@ -32,14 +32,24 @@ const Reminder = ({ data }) => {
             e.target.classList.remove("modal-open")
         }
     }
+    
+    const resize = (e)=>{
+        var offset = e.scrollHeight ;  
+        e.style.height = 'auto';   
+        e.style.height =   offset + 'px'   
+    }
+
+    useEffect(()=>{
+        resize(document.getElementById(data._id));
+    })
 
     return (
         <div className="modal" onClick={closeModal} ref={modalRef}>
-            <div className="reminder">
-                <div className="reminder-data">
+            <div className="item reminder">
+                <div className="item-data">
 
                     <input type="text" value={reminderData.title} name='title' onChange={handleChange} />
-                    <textarea data-autoresize type="text" rows="4" value={reminderData.description} name='description' onChange={handleChange} />
+                    <textarea data-autoresize type="text" rows="4" value={reminderData.description} name='description' onChange={handleChange} id={data._id}/>
 
                 </div>
 

@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API = axios.create({
     baseURL: 'https://keeper-project.herokuapp.com/'
+    // baseURL: 'http://localhost:5000'
 })
 API.interceptors.request.use((req)=>{
     if(localStorage.getItem('profile'))
@@ -11,7 +12,7 @@ API.interceptors.request.use((req)=>{
 
 export const signin = (formData) => API.post('/users/signin', formData)
 export const signup = (formData) => API.post('/users/signup', formData)
-export const updatePicture = (id, newUser) => API.patch(`/users/updatePic/${id}`, newUser)
+export const updateUser = (id, newUser) => API.patch(`/users/updateUser/${id}`, newUser)
 
 export const getNotes = () => API.get('/note')
 export const createNote = (formData) => API.post('/note/add', formData)

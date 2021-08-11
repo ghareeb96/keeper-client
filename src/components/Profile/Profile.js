@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './Profile.scss'
-import { updatePicture } from '../../actions/auth';
+import { updateUser } from '../../actions/auth';
 
 
 const Profile = () => {
@@ -37,7 +37,7 @@ const Profile = () => {
 
     useEffect(() => {
         if (base64 !== '') {
-            dispatch(updatePicture(user.result._id, { ...user.result, profile_picture: base64 }))
+            dispatch(updateUser(user.result._id, { ...user.result, profile_picture: base64 }))
             setBase64('')
         }
     }, [base64, dispatch, user.result])

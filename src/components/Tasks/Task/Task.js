@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef,useEffect } from 'react'
 import "./Task.scss";
 import { ReactComponent as Delete } from './Delete.svg'
 import { ReactComponent as Check } from './Check.svg'
@@ -15,7 +15,8 @@ const Task = ({ data }) => {
     const dispatch = useDispatch();
     const taskDate = moment(data.createdAt).fromNow()
 
-   
+
+
     const handleDelete = () => {
         dispatch(deleteTask(data._id))
     }
@@ -40,13 +41,23 @@ const Task = ({ data }) => {
             dispatch(updateTask(data._id, taskData))        }
     }
 
+    const resize = (e)=>{
+        var offset = e.scrollHeight ;  
+        e.style.height = 'auto';   
+        e.style.height =   offset + 'px'   
+    }
+
+    useEffect(()=>{
+        resize(document.getElementById(data._id));
+    })
+
     return (
         <div className="modal" onClick={closeModal} ref={modalRef}>
-            <div className={taskData.is_completed ? 'task completed' : 'task incompleted'}>
-                <div className="task-data">
+            <div className={taskData.is_completed ? 'item task completed' : 'item task incompleted'}>
+                <div className="item-data">
 
                     <input type="text" value={taskData.task} name='task' onChange={handleChange} />
-                    <textarea data-autoresize type="text" rows="4" value={taskData.description} name='description' onChange={handleChange} />
+                    <textarea data-autoresize type="text" value={taskData.description} name='description' onChange={handleChange} id={data._id}/>
 
                 </div>
 

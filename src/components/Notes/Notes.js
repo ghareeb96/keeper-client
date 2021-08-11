@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Notes.scss';
 import { createNote, getNotes } from '../../actions/note';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import Note from './Note/Note';
 
 const Notes = () => {
@@ -15,18 +14,7 @@ const Notes = () => {
     const handleChange = (e) => {
         setNoteData({ ...noteData, [e.target.name]: e.target.value })
     }
-    const addAutoResize = () => {
-        document.querySelectorAll('[data-autoresize]').forEach(function (element) {
-            element.style.boxSizing = 'border-box';
-            console.log(element)
-            var offset = element.offsetHeight - element.clientHeight;
-            element.addEventListener('input', function (event) {
-                event.target.style.height = 'auto';
-                event.target.style.height = event.target.scrollHeight + offset + 'px';
-            });
-            element.removeAttribute('data-autoresize');
-        });
-    }
+
     const handleCreate = (e) => {
         e.preventDefault()
         dispatch(createNote(noteData));
@@ -37,9 +25,6 @@ const Notes = () => {
         dispatch(getNotes())
     }, [dispatch])
 
-    useEffect(() => {
-        addAutoResize()
-    },[dispatch, notes])
     return (
         <div className="tab-page notes-page">
 

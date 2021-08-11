@@ -14,10 +14,11 @@ const authReducer = (state = { authData: null , authError : null}, action) => {
         case 'CLEAR_ERROR':
             return {...state, authError : null }
 
-        case 'UPDATE_PICTURE':
+        case 'UPDATE_USER':
             const user = JSON.parse(localStorage.getItem('profile'))
             localStorage.setItem('profile', JSON.stringify({...user, result : action?.data}))
             return { ...state, authData: {...user, result : action?.data} }
+
 
         default:
             return state;

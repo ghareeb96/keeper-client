@@ -1,4 +1,14 @@
 @import "../../../App.scss";
 
+.modal {
+    .note {
+        background: var(--note-color);
 
+        .item-footer {
 
+            background: var(--note-color);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--note-color) 50%);
+            
+        }
+    }
+}
