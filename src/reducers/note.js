@@ -1,7 +1,7 @@
-const noteReducer = (notes = [] , action) => {
+const noteReducer = (notes = null , action) => {
     switch (action.type) {
         case 'CREATE_NOTE':
-            return  [...notes, action?.data]
+            return  [action?.data, ...notes]
 
         case 'DELETE_NOTE':
             return  notes.filter(note=> note._id !== action.data);
@@ -10,11 +10,10 @@ const noteReducer = (notes = [] , action) => {
             return  notes.map(note=> note._id === action.data._id ? action.data : note );
 
         case 'GET_USER_NOTES':
-            return action.data
+            return action.data.reverse()
 
         case 'LOGOUT':
-                console.log('reached')
-                return notes = []
+                return notes = null
 
         default:
             return notes;

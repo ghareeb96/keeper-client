@@ -14,6 +14,7 @@ const Switcher = () => {
 
     const toggleTheme = () => {
         dispatch(updateUser(user.result._id, { ...user.result, darkTheme: !user.result.darkTheme }))
+
     }
 
 

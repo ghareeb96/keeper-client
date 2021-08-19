@@ -30,9 +30,16 @@ const Home = () => {
     }
 
     const logout = () => {
+        setActiveTab('notes-tab')
         setUser(null)
         dispatch({ type: 'LOGOUT' })
         document.getElementsByTagName('body')[0].classList.remove('dark')
+    }
+
+    const closeSidebar = ()=>{
+        if (document.getElementById('home-body').classList.contains('sidebar-opened')) {
+            document.getElementById('home-body').classList.remove('sidebar-opened')
+        }
     }
 
     useEffect(() => {
@@ -101,7 +108,8 @@ const Home = () => {
                                     handleLogout={logout}
                                 />
                             </div>
-                            <div className="main-container">
+                            <div className="main-container" >
+                                <div className="modal-container" onClick={closeSidebar}></div>
                                 {renderedTab()}
                             </div>
 
