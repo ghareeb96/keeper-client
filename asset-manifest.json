@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/keeper-client/static/css/main.18a7b288.chunk.css",
+    "main.css": "/keeper-client/static/css/main.8d8e21d2.chunk.css",
     "main.js": "/keeper-client/static/js/main.ab4b9681.chunk.js",
     "main.js.map": "/keeper-client/static/js/main.ab4b9681.chunk.js.map",
     "runtime-main.js": "/keeper-client/static/js/runtime-main.d32ff17f.js",
@@ -8,7 +8,7 @@
     "static/js/2.0486ea90.chunk.js": "/keeper-client/static/js/2.0486ea90.chunk.js",
     "static/js/2.0486ea90.chunk.js.map": "/keeper-client/static/js/2.0486ea90.chunk.js.map",
     "index.html": "/keeper-client/index.html",
-    "static/css/main.18a7b288.chunk.css.map": "/keeper-client/static/css/main.18a7b288.chunk.css.map",
+    "static/css/main.8d8e21d2.chunk.css.map": "/keeper-client/static/css/main.8d8e21d2.chunk.css.map",
     "static/js/2.0486ea90.chunk.js.LICENSE.txt": "/keeper-client/static/js/2.0486ea90.chunk.js.LICENSE.txt",
     "static/media/Check.8f6811c2.svg": "/keeper-client/static/media/Check.8f6811c2.svg",
     "static/media/Delete.9dc57184.svg": "/keeper-client/static/media/Delete.9dc57184.svg",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.d32ff17f.js",
     "static/js/2.0486ea90.chunk.js",
-    "static/css/main.18a7b288.chunk.css",
+    "static/css/main.8d8e21d2.chunk.css",
     "static/js/main.ab4b9681.chunk.js"
   ]
 }
