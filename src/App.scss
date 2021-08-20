@@ -45,12 +45,12 @@ body {
     transition: all 0.3s ease-out;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 8px;
 }
 
-::-webkit-scrollbar-thumb{
-    background : var(--border-color);
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
     border-radius: 8px;
 }
 
@@ -65,7 +65,7 @@ span,
 input,
 textarea {
     color: var(--text-color);
-    
+
 }
 
 
@@ -85,7 +85,7 @@ textarea {
     padding: 0.4rem 0.6rem;
     font-size: 1rem;
 
-    
+
 }
 
 
@@ -179,7 +179,7 @@ textarea {
                         overflow: auto;
                         word-wrap: break-word;
                         resize: none;
-                        
+
                         &::placeholder {
                             color: var(--text-color);
                             opacity: 0.5;
@@ -211,49 +211,51 @@ textarea {
     }
 }
 
-.empty{
-    width : 100%;
-    height : 200px;
-    display : flex;
+.empty {
+    width: 100%;
+    height: 200px;
+    display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0.6;
 
-    .icon{
-        width : 70px;
-        height : 70px;
-        margin : 10px;
-        fill : var(--border-color);
+    .icon {
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+        fill: var(--border-color);
     }
-    
-    .typo{
-        line-height : 3rem;
-        h4{
-            color : var(--border-color);
-            font-size : 2rem;
+
+    .typo {
+        line-height: 3rem;
+
+        h4 {
+            color: var(--border-color);
+            font-size: 2rem;
         }
-        h5{
-            color : var(--border-color);
-            font-size : 1.5rem;
+
+        h5 {
+            color: var(--border-color);
+            font-size: 1.5rem;
         }
     }
 }
 
-.loading{
-    width : 100%;
-    display : flex;
+.loading {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 60px;
 
-    svg.MuiCircularProgress-svg{
+    svg.MuiCircularProgress-svg {
         color: var(--border-color);
     }
 }
 
 .modal {
 
-   .item{
+    .item {
         width: 400px;
         @include itemWidth;
         height: 200px;
@@ -261,7 +263,7 @@ textarea {
         padding: 10px;
         border-radius: 10px;
         position: relative;
-        transition: all 0.15s ease-out;
+        animation: load-items 0.2s;
 
         &-data {
             display: flex;
@@ -290,7 +292,6 @@ textarea {
                     font-size: 0.9rem;
                     font-weight: 400;
                     width: 100%;
-                    // height: fit-content;
                     overflow: hidden;
                     word-wrap: break-word;
                     resize: none;
@@ -314,7 +315,6 @@ textarea {
             z-index: 1;
             transition: all 0.2s ease-out;
             width: 100%;
-            padding: 10px;
             height: 60px;
             pointer-events: none;
 
@@ -331,6 +331,7 @@ textarea {
                 justify-content: flex-end;
                 opacity: 0;
                 transition: all 0.2s ease-out;
+                margin-right : 10px;
 
                 .modal-action {
                     display: flex;
@@ -348,6 +349,7 @@ textarea {
                         width: 20px;
                         height: 20px;
                         pointer-events: none;
+
                     }
                 }
 
@@ -376,8 +378,7 @@ textarea {
     align-items: center;
     justify-content: center;
 
-    .item{
-
+    .item {
         z-index: 4;
         width: 550px;
         height: auto;
@@ -386,6 +387,7 @@ textarea {
         padding: 10px;
         border-radius: 10px;
         margin: 0 30px;
+        animation: open-modal 0.2s;
 
         &::after {
             display: none;
@@ -441,7 +443,6 @@ textarea {
             background: none;
 
             .time-data {
-                margin-top: auto;
                 padding-left: 10px;
                 opacity: 1;
 
@@ -449,7 +450,6 @@ textarea {
                     font-size: .7rem;
                     letter-spacing: 1px;
                     font-weight: 700;
-                    // color: #555;
                 }
             }
 
@@ -458,10 +458,6 @@ textarea {
                 .modal-action {
                     opacity: 1;
 
-
-                    // &:hover {
-                    //     background: var(--secondary-background-color);
-                    // }
                 }
             }
 
@@ -473,6 +469,56 @@ textarea {
 
 }
 
+@keyframes load-items {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes open-modal {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+@media screen and(max-width : $smallScreen) {
+    .modal {
+
+        .item {
+            transition: background 0.2s ease-out;
+
+            .item-footer {
+                pointer-events: all;
+
+                .modal-actions {
+
+                    opacity: 1;
+
+                    .modal-action {
+                        pointer-events: all;
+
+                        .icon {
+
+                            pointer-events: none;
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
 @media screen and (max-width : $xSmallScreen) {
 
     .items-container {
@@ -480,21 +526,46 @@ textarea {
         flex-direction: column;
         align-items: center;
     }
-    .empty{
-    
-        .icon{
-            width : 40px;
-            height : 50px;
+
+    .empty {
+
+        .icon {
+            width: 40px;
+            height: 50px;
         }
-        
-        .typo{
-            line-height : 3rem;
-            h4{
-                font-size : 1.5rem;
+
+        .typo {
+            line-height: 3rem;
+
+            h4 {
+                font-size: 1.5rem;
             }
-            h5{
-                font-size : 1.2rem;
+
+            h5 {
+                font-size: 1.2rem;
             }
         }
+    }
+
+    .modal-open {
+
+        .item {
+
+            &-data {
+
+                input,
+                textarea {
+
+                    &[name="body"],
+                    &[name="description"] {
+
+                        max-height: 250px;
+
+                    }
+                }
+            }
+
+        }
+
     }
 }
