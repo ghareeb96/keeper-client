@@ -25,10 +25,9 @@ export const signin = (formData) => async (dispatch) => {
     }
 }
 
-export const clearError = () => async (dispatch)=>{
-    console.log("reached")
+export const clearError = () => async (dispatch) => {
     dispatch({
-        type : 'CLEAR_ERROR'
+        type: 'CLEAR_ERROR'
     })
 }
 
@@ -68,18 +67,41 @@ export const updateUser = (id, newUser) => async (dispatch) => {
     }
 }
 
-// export const changeTheme = (id, user) => async (dispatch) => {
-//     try {
-//         const {
-//             data
-//         } = await api.changeTheme(id,user);
+export const googleAuth = (formData) => async (dispatch) => {
+    try {
+        const {
+            data
+        } = await api.signin(formData);
 
-//         dispatch({
-//             type: 'UPDATE_THEME',
-//             data
-//         })
 
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
+        dispatch({
+            type: 'AUTH',
+            data
+        })
+
+    } catch (error) {
+        if (error.response.status === 404) {
+            try {
+                const {
+                    data
+                } = await api.signup(formData);
+
+                dispatch({
+                    type: 'AUTH',
+                    data
+                })
+
+            } catch (error) {
+                dispatch({
+                    type: 'AUTH_ERROR',
+                    data: error.response.data.message
+                })
+            }
+        } else {
+            dispatch({
+                type: 'AUTH_ERROR',
+                data: error.response.data.message
+            })
+        }
+    }
+}
