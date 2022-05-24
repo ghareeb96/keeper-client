@@ -75,9 +75,6 @@ const Home = () => {
             case 'notes-tab':
                 return <Notes />
 
-            // case 'reminders-tab':
-            //     return <Reminders />
-
             case 'tasks-tab':
                 return <Tasks />
 

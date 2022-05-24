@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Switcher.scss'
-import { ReactComponent as Light } from './light.svg'
-import { ReactComponent as Dark } from './dark.svg'
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from '../../actions/auth';
 
@@ -41,11 +39,9 @@ const Switcher = () => {
 
     return (
         <div className="switcher">
-            <Light className='icon themes-icons' />
             <div className="switch-container" onClick={toggleTheme}>
                 <div className="toggler" id='toggler'></div>
             </div>
-            <Dark className='icon themes-icons' />
         </div>
     )
 }

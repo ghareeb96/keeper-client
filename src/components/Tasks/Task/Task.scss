@@ -4,12 +4,7 @@
 .modal {
     .incompleted {
         background: var(--task-incompleted-color);
-    
-    
-        .item-footer{
-            background: var(--task-incompleted-color);
-            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--task-incompleted-color) 50%);
-        }
+
     }
 }
 
@@ -17,11 +12,6 @@
     .completed {
         background: var(--task-completed-color);
     
-        .item-footer{
-            background: var(--task-completed-color);
-            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--task-completed-color) 50%);
-
-        }
     }
 
 }

@@ -3,32 +3,15 @@
 .auth {
     width: 100%;
     height: 100vh;
-    position: relative;
-
-    .background {
-        width: 100%;
-        height: 100%;
-        background: url("./background.png");
-        background-position: center;
-        background-size: cover;
-        position: relative;
-
-        .background-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(#000, 0.6);
-        }
-    }
+    background: #f7d390;
+    background: radial-gradient(circle, #f7d390 0%, #94bbe9 100%); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .form-section {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 40%;
-        height: 100%;
+        width: 450px;
+        height: 600px;
         background: #fff;
         display: flex;
         align-items: center;
@@ -50,12 +33,13 @@
         .form-container {
             display: flex;
             flex-direction: column;
-            width: 80%;
-            height: 80%;
-            margin: auto;
+            justify-content: space-between;
+            padding:2rem;
+            width: 100%;
+            height: 100%;
 
             .logo-section {
-                height: 10%;
+                height: 15%;
                 h2{
                     color : #000;
                 }
@@ -83,15 +67,16 @@
                     }
 
                     h4 {
-                        font-size: 14px;
+                        font-size: 12px;
                         margin-bottom: 4px;
-                        color: #111;
+                        color: #222;
+                        letter-spacing: 1px;
                     }
 
                     input {
                         font-size: 14px;
-                        padding: 0.7rem 0.4rem;
-                        margin-bottom: 14px;
+                        padding: 0.5rem 0.4rem;
+                        margin-bottom: 12px;
                         background: lighten($secondary-bg-color-light, 3);
                         border: 1px solid darken($secondary-bg-color-light, 20);
                     }
@@ -107,44 +92,44 @@
 
                     }
                 }
+                .btn {
+                    width: 100%;
+                    padding : 0.7rem 0.4rem;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    margin-top: 1rem;
+                    border: none;
+                    cursor: pointer;
+
+                }
 
                 .submit-btn {
-                    margin-top: 20px;
 
                     .btn {
-                        width: 100%;
-                        padding : 0.7rem;
+                        font-size: 1.2rem;
                         background-color: $primary-accent-color;
-                        font-size: 1.1rem;
-                        font-weight: 700;
-                        letter-spacing: 1px;
+                        
                     }
                 }
 
                 span{
                     text-align : center;
-                    padding : 0.6rem;
                     font-size : 1.2rem;
                     font-weight: 600;
+                    margin-top: 1rem;
+
                 }
 
 
 
                 .switch-btn {
-                    width: 100%;
-
-                    button {
-                        margin-top: 20px;
-                        width: 100%;
-                        padding : 0.6rem;
+                    
+                    button {           
                         background: darken($secondary-bg-color-light, 5);
-                        border: none;
-                        font-size: 1rem;
-                        letter-spacing: 1px;
-                        font-weight: 700;
-                        cursor: pointer;
                     }
                 }
+
                 .google-btn{
                     button{
                         display : flex;
@@ -152,11 +137,7 @@
                         justify-content: center;
                         background: none;
                         border : 1px solid rgb(87, 87, 87);
-                        width : 100%;
-                        font-size : 1.1rem;
-                        letter-spacing: 1px;
-                        font-weight: 600;
-                        padding : 0.7rem;
+                        margin-top: 0;
 
                         .google-icon{
                             margin-right : 12px;
@@ -169,110 +150,6 @@
 
     }
 
-    .slogan-side {
-        position: absolute;
-        width: 60%;
-        height: 100%;
-        right: 0;
-        top: 0;
-        padding: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .slogan-typo {
-            width: 450px;
-            letter-spacing: 2px;
-            line-height: 5.5rem;
-            
-            h4 {
-                color: $primary-accent-color;
-                font-size: 3.5rem;
-            }
-
-            span {
-                font-size: 2rem;
-                font-weight: 400;
-                color: white;
-            }
-
-        }
-    }
-}
-
-@media screen and(max-width : $mediumScreen) {
-    .auth {
-
-        .form-section {
-
-            .form {
-
-
-
-                .form-body {
-
-
-                    .form-input {
-
-                        h4 {
-                            font-size: 12px;
-                        }
-
-                        input {
-                            font-size: 14px;
-                            padding: 0.4rem 0.4rem;
-
-                        }
-
-                    }
-
-                    .submit-btn {
-                        margin-top: 15px;
-
-                        .btn {
-                            height: 30px;
-                        }
-                    }
-
-                }
-            }
-
-
-        }
-
-        .slogan-side {
-
-            .slogan-typo {
-                width: 350px;
-                letter-spacing: 2px;
-                line-height: 5rem;
-
-                h4 {
-                    font-size: 2.5rem;
-                }
-
-                span {
-                    font-size: 1.8rem;
-                }
-            }
-        }
-    }
-}
-
-@media screen and(max-width : $smallScreen) {
-    .auth {
-        .form-section {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 800px;
-            width: 70%;
-        }
-
-        .slogan-side {
-            display: none;
-        }
-    }
 }
 
 @media screen and(max-width : $xSmallScreen) {

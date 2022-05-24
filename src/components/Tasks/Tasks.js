@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './Tasks.scss';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getTasks, createTask } from '../../actions/task';
@@ -74,7 +73,7 @@ const Tasks = () => {
                                     <Empty className='icon empty-icon'/>
                                 </div>
                                 <div className="typo">
-                                    <h4>You have no Tasks yet</h4>
+                                    <h4>You don't have any Tasks yet</h4>
                                 </div>
                             </div>
 

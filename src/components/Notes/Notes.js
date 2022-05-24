@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './Notes.scss';
 import { createNote, getNotes } from '../../actions/note';
 import { useSelector, useDispatch } from 'react-redux';
 import Note from './Note/Note';
@@ -67,7 +66,7 @@ const Notes = () => {
                                 <EmptyNote className='icon empty-icon' />
                             </div>
                             <div className="typo">
-                                <h4>You have no Notes yet</h4>
+                                <h4>You don't have any Notes yet</h4>
                             </div>
                         </div>)
                     

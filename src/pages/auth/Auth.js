@@ -79,9 +79,7 @@ const Auth = () => {
 
     return (
         <div className="auth">
-            <div className="background">
-                <div className="background-overlay"></div>
-            </div>
+            
             <div className="form-section">
                 {
                     loadingScreen ? (
@@ -127,68 +125,62 @@ const Auth = () => {
                                         <span>{authError}</span>
                                     </div>
                                     <div className="submit-btn">
-                                        <button className="btn" type="submit" onClick={handleSubmit}>Sign Up</button>
+                                        <button className="btn" type="submit" onClick={handleSubmit}>Sign up</button>
                                     </div>
                                 </form>
                                 <div className="switch-btn">
-                                    <button onClick={handleFormSwitch}>Have an account</button>
+                                    <button className="btn" onClick={handleFormSwitch}>Have an account</button>
                                 </div>
                             </div>
                         </div>
                     ) : (
 
-                            <div className="signin-form form-container">
+                        <div className="signin-form form-container">
 
-                                <div className="logo-section">
-                                    <Logo className='icon logo-icon' />
-                                    <h2>Keeper</h2>
-                                </div>
+                            <div className="logo-section">
+                                <Logo className='icon logo-icon' />
+                                <h2>Keeper</h2>
+                            </div>
 
-                                <div className="form-body">
-                                    <form action="" method="post">
-                                        <div className="form-input email">
-                                            <h4>Email</h4>
-                                            <input type="email" value={formData.email} name="email" required onChange={handleChange} />
-                                        </div>
-                                        <div className="form-input password">
-                                            <h4>Password</h4>
-                                            <input type="password" value={formData.password} name="password" required onChange={handleChange} />
-                                        </div>
-                                        <div className="error-message">
-                                            <span>{authError}</span>
-                                        </div>
-                                        <div className="submit-btn">
-                                            <button className="btn" type="submit" onClick={handleSubmit}>Sign In</button>
-                                        </div>
-                                    </form>
-                                    <div className="switch-btn">
-                                        <button onClick={handleFormSwitch}>Create an account</button>
+                            <div className="form-body">
+                                <form action="" method="post">
+                                    <div className="form-input email">
+                                        <h4>Email</h4>
+                                        <input type="email" value={formData.email} name="email" required onChange={handleChange} />
                                     </div>
-                                    <span>or</span>
-                                    <div className="google-btn btn">
-                                        <GoogleLogin
-                                            clientId='689278456234-9dt58abdin3vl7lj3c6b7mp0g47de3e0.apps.googleusercontent.com'
-                                            render={(renderProps) => (
-                                                <button className="google" onClick={renderProps.onClick}>
-                                                    <Google className='icon google-icon' />
-                                            Sign with Google
-                                                </button>
-
-                                            )}
-                                            onSuccess={googleSuccess}
-                                            onFailure={googleFailure}
-                                            cookiePolicy='single_host_origin'
-                                        />
+                                    <div className="form-input password">
+                                        <h4>Password</h4>
+                                        <input type="password" value={formData.password} name="password" required onChange={handleChange} />
                                     </div>
+                                    <div className="error-message">
+                                        <span>{authError}</span>
+                                    </div>
+                                    <div className="submit-btn">
+                                        <button className="btn" type="submit" onClick={handleSubmit}>Sign in</button>
+                                    </div>
+                                </form>
+                                <div className="switch-btn">
+                                    <button className="btn" onClick={handleFormSwitch}>Create an account</button>
                                 </div>
-                            </div>)
+                                <span>or</span>
+                                <div className="google-btn btn">
+                                    <GoogleLogin
+                                        clientId='689278456234-9dt58abdin3vl7lj3c6b7mp0g47de3e0.apps.googleusercontent.com'
+                                        render={(renderProps) => (
+                                            <button className="google btn" onClick={renderProps.onClick}>
+                                                <Google className='icon google-icon' />
+                                                Sign with Google
+                                            </button>
+
+                                        )}
+                                        onSuccess={googleSuccess}
+                                        onFailure={googleFailure}
+                                        cookiePolicy='single_host_origin'
+                                    />
+                                </div>
+                            </div>
+                        </div>)
                 }
-            </div>
-
-            <div className="slogan-side">
-                <div className="slogan-typo">
-                    <h4><span>Keep your </span>Notes, Reminders and Tasks<span> in one place</span></h4>
-                </div>
             </div>
         </div>
     )

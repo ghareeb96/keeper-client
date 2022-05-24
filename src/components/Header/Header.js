@@ -34,7 +34,6 @@ const Header = ({ user }) => {
 
                 <div className="menu-btn">
                     <Menu className='icon menu-icon' onClick={toggleSidebar} />
-                    
                 </div>
             </div>
         </div>

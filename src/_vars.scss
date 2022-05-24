@@ -1,6 +1,6 @@
 //* Main Colors
 $logo-color : #f3a310;
-$primary-accent-color : #FFB287;
+$primary-accent-color : #F6C262;
 
 
 //* light theme colors
@@ -47,7 +47,7 @@ $sidebarWidth : 250px;
     }
     
     @media screen and (max-width: $mediumScreen) {
-        width : 70vw;
+        width : 60vw;
     }
 
     @media screen and (max-width: $xSmallScreen) {
@@ -58,7 +58,7 @@ $sidebarWidth : 250px;
 
 @mixin itemWidth() {
     @media screen and (max-width: $mediumScreen) {
-        width : 70vw;
+        width : 60vw;
     }
     
     
