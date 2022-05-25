@@ -10,6 +10,7 @@ const Profile = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
     const dispatch = useDispatch()
     const userData = useSelector(state => state.auth.authData)
+    const joinDate = new Date(user.result.createdAt)
 
     const getBase64 = (file) => {
         return new Promise(resolve => {
@@ -51,27 +52,50 @@ const Profile = () => {
     return (
         <div className='profile'>
 
-            <div className="picture-section">
+            <div className="upper-section">
                 <div className="profile-picture">
                     <img src={user.result.profile_picture} alt="pp" />
                 </div>
 
-                <div className="profile-pic-btn">
+                <div className="name-password-btn">
+                    <div className="name">
+                        <h2>{user.result.name}</h2>
+                    </div>
                     <div className="file-input">
-                        <input type="file" id="myfile" accept="image/*" className="myfile" onChange={handleUpload} />
-                        <label htmlFor="myfile"> <i className="fas fa-image"></i>Change Picture</label>
+                        <input type="file" id="myfile" accept="image/*" className="myfile " onChange={handleUpload} />
+                        <label htmlFor="myfile" > <i className="fas fa-image"></i>Change Password</label>
                     </div>
                 </div>
             </div>
 
-            <div className="info-section">
-                <div className="info email">
+            <div className="data-section">
+
+                <div className="profile-info">
                     <h6>Email</h6>
-                    <h2>{user.result.email}</h2>
+                    <h3>{user.result.email}</h3>
                 </div>
-                <div className="info name">
-                    <h6>Name</h6>
-                    <h2>{user.result.name}</h2>
+                <div className="profile-info">
+                    <h6>Mobile</h6>
+                    {
+                        user.result.mobile ?
+                            <h3>{user.result.mobile}</h3>
+                            :
+                            <button className="btn add-mobile">Add Mobile</button>
+                    }
+
+                </div>
+                <div className="profile-info">
+                    <h6>Birth date</h6>
+                    {
+                        user.result.birthdate ?
+                            <h3>{user.result.birthdate}</h3>
+                            :
+                            <button className="btn add-birthdate">Add Birth date</button>
+                    }
+                </div>
+                <div className="profile-info">
+                    <h6>Date joined</h6>
+                    <h3>{`${joinDate.getDate()} - ${joinDate.getMonth() + 1} - ${joinDate.getFullYear()}`}</h3>
                 </div>
             </div>
 

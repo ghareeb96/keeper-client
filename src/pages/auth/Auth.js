@@ -14,7 +14,7 @@ const Auth = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', profile_picture: defaultPic }
+    const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '', profile_picture: defaultPic, mobile: '', birthdate:'' }
     const [formData, setFormData] = useState(initialState);
     const [isSignUp, setIsSignUp] = useState(false);
     const [loadingScreen, setLoadingScreen] = useState(false)

@@ -198,7 +198,7 @@ textarea {
                         letter-spacing: 1px;
                         font-weight: 700;
                         padding: 0.5rem 1rem;
-                        background: $primary-accent-color;
+                        background: lighten($primary-accent-color, 10);
                         width: 80px;
                         border-radius: 5px;
                         align-self: flex-end;

@@ -1,89 +1,119 @@
 @import '../../App.scss';
 
-.profile{
-    display : flex;
+.profile {
+    display: flex;
     flex-direction: column;
-    width : 100%;
+    width: 100%;
 
-    .picture-section{
-        display : flex;
-        flex-direction: column;
-        align-items : center;
-        width : 100%;
 
-        .profile-picture{
-            width : 240px;
-            height : 240px;
+    .upper-section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .profile-picture {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
             background: #fff;
-            img{
-                width : 100%;
-                height : 100%;
+            margin-right: 50px;
+
+            img {
+                width: 100%;
+                height: 100%;
                 object-position: center;
-                object-fit: contain;
+                object-fit: cover;
             }
         }
 
 
-        .profile-pic-btn {
+        .name-password-btn {
+            height: 100px;
+            width: calc(100% - 200px);
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+
+
+            .name {
+                h2 {
+                    font-size: 2rem;
+                    letter-spacing: 1px;
+                }
+            }
+
             .file-input {
+                align-self: flex-end;
+
                 .myfile {
                     opacity: 0;
                     width: 0.1px;
                     height: 0.1px;
                     position: absolute;
                 }
-    
+
                 label {
                     display: block;
                     position: relative;
                     width: 180px;
-                    border-radius: 3px;
-                    background:rgb(34, 123, 150);
-                    padding: 0.4rem 0.6rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: white;
-                    font-weight: bold;
                     cursor: pointer;
                     transition: transform 0.2s ease-out;
+                    background-color: rgb(116, 116, 116);
+                    padding: 0.4rem 0.6rem;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    color: white;
                     letter-spacing: 1px;
-                    margin-top: 40px;   
+                    border-radius: 5px;
                 }
             }
         }
     }
 
-    .info-section{
-        margin-top : 50px;
+    .data-section {
 
-        .info{
-            margin-bottom : 20px;
-            background: rgba(rgb(240, 240, 240), 0.4);
-            padding : 0.8rem;
-            border-radius: 10px;
-            h6{
-                font-size : 1rem;
+        margin-top: 50px;
+
+
+        .profile-info {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+
+            h6 {
+                font-size: 1rem;
                 font-weight: 400;
-                margin-bottom : 10px;
+                margin-bottom: 10px;
+            }
+
+            .btn {
+                background-color: rgb(116, 116, 116);
+                padding: 0.4rem 0.6rem;
+                font-weight: 600;
+                font-size: 1rem;
+                color: white;
+                letter-spacing: 1px;
+                border-radius: 5px;
             }
         }
     }
 }
 
-@media screen and (max-width : $xSmallScreen){
-    .profile{
+@media screen and (max-width : $xSmallScreen) {
+    .profile {
 
-        .info-section{
-    
-            .info{
-                h6{
-                    font-size : 0.8rem;
+        .info-section {
+
+            .info {
+                h6 {
+                    font-size: 0.8rem;
                 }
-                h2{
-                    font-size : 1.2rem;
+
+                h2 {
+                    font-size: 1.2rem;
                 }
             }
         }
