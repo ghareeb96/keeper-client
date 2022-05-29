@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const API = axios.create({
-    // baseURL: 'https://keeper-project.herokuapp.com/'
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://keeper-project.herokuapp.com/'
+    // baseURL: 'http://localhost:5000'
 })
 API.interceptors.request.use((req)=>{
     if(localStorage.getItem('profile'))

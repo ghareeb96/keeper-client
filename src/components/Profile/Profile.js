@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './Profile.scss'
+import {ReactComponent as Camera} from './camera.svg'
 import { updateUser, changePassword } from '../../actions/auth';
 
 
@@ -125,16 +126,17 @@ const Profile = () => {
             <div className="upper-section">
                 <div className="profile-picture">
                     <img src={user.result.profile_picture} alt="pp" />
+                    <div className="file-input">
+                        <input type="file" id="myfile" accept="image/*" className="myfile " onChange={handleUpload} />
+                        <label htmlFor="myfile" > <Camera className='icon camera-icon' /></label>
+                    </div>
                 </div>
 
                 <div className="name-password-btn">
                     <div className="name">
                         <h2>{user.result.name}</h2>
                     </div>
-                    <div className="file-input">
-                        <input type="file" id="myfile" accept="image/*" className="myfile " onChange={handleUpload} />
-                        <label htmlFor="myfile" > <i className="fas fa-image"></i>Change Picture</label>
-                    </div>
+                    
                     <div className="change-password">
                         <button className="btn" id="password-btn" onClick={showModal}>
                             Change Password

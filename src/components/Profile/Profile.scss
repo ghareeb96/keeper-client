@@ -43,6 +43,7 @@
         width: 100%;
 
         .profile-picture {
+            position: relative;
             width: 200px;
             height: 200px;
             border-radius: 50%;
@@ -56,12 +57,51 @@
                 object-position: center;
                 object-fit: cover;
             }
+
+            .file-input {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                .myfile {
+                    opacity: 0;
+                    width: 0.1px;
+                    height: 0.1px;
+                    position: absolute;
+                }
+
+                label {
+                    display: block;
+                    position: relative;
+                    width: 100%;   
+                    height: 100%;
+                    background-color: rgba(255,255,255,0.6);                 
+                    cursor: pointer;
+                    transition: all 0.2s ease-out;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+
+                    .icon{
+                        fill: #000;
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
         }
 
 
         .name-password-btn {
             height: 100px;
-            width: calc(100% - 200px);
+            width: calc(100% - 250px);
             display: flex;
             flex-direction: column;
             margin-top: auto;
@@ -139,34 +179,7 @@
                 }
             }
 
-            .file-input {
-                align-self: flex-end;
-
-                .myfile {
-                    opacity: 0;
-                    width: 0.1px;
-                    height: 0.1px;
-                    position: absolute;
-                }
-
-                label {
-                    display: block;
-                    position: relative;
-                    width: 180px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: transform 0.2s ease-out;
-                    background-color: rgb(116, 116, 116);
-                    padding: 0.4rem 0.6rem;
-                    font-weight: 600;
-                    font-size: 1rem;
-                    color: white;
-                    letter-spacing: 1px;
-                    border-radius: 5px;
-                }
-            }
+            
         }
     }
 
