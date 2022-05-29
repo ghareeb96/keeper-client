@@ -67,6 +67,28 @@ export const updateUser = (id, newUser) => async (dispatch) => {
     }
 }
 
+export const changePassword = (id, passwordData) => async (dispatch) => {
+
+    try {
+        const { data } =  await api.changePassword(id, passwordData);
+       
+            dispatch({
+                type: 'PASSWORD_CHANGED',
+                data
+            })
+            
+        
+
+
+    } catch (error) {
+
+        dispatch({
+            type: 'PASSWORD_CHANGE_ERROR',
+            data: error.response.data.message
+        })    
+    }
+}
+
 export const googleAuth = (formData) => async (dispatch) => {
     try {
         const {

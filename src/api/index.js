@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'https://keeper-project.herokuapp.com/'
-    // baseURL: 'http://localhost:5000'
+    // baseURL: 'https://keeper-project.herokuapp.com/'
+    baseURL: 'http://localhost:5000'
 })
 API.interceptors.request.use((req)=>{
     if(localStorage.getItem('profile'))
@@ -13,16 +13,12 @@ API.interceptors.request.use((req)=>{
 export const signin = (formData) => API.post('/users/signin', formData)
 export const signup = (formData) => API.post('/users/signup', formData)
 export const updateUser = (id, newUser) => API.patch(`/users/updateUser/${id}`, newUser)
+export const changePassword = (id, passwordData) => API.patch(`/users/changePassword/${id}`, passwordData)
 
 export const getNotes = () => API.get('/note')
 export const createNote = (formData) => API.post('/note/add', formData)
 export const deleteNote = (id) => API.delete(`/note/${id}`)
 export const updateNote = (id, newNote) => API.patch(`/note/${id}`, newNote)
-
-export const getReminders = () => API.get('/reminder')
-export const createReminder = (formData) => API.post('/reminder/add', formData)
-export const deleteReminder = (id) => API.delete(`/reminder/${id}`)
-export const updateReminder = (id, newReminder) => API.patch(`/reminder/${id}`, newReminder)
 
 export const getTasks = () => API.get('/task')
 export const createTask = (formData) => API.post('/task/add', formData)

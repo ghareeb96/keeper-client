@@ -3,7 +3,6 @@ import decode from 'jwt-decode';
 import './Home.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import Notes from '../../components/Notes/Notes';
-// import Reminders from '../../components/Reminders/Reminders';
 import Tasks from '../../components/Tasks/Tasks';
 import Profile from '../../components/Profile/Profile';
 import Header from '../../components/Header/Header';
@@ -36,7 +35,7 @@ const Home = () => {
         document.getElementsByTagName('body')[0].classList.remove('dark')
     }
 
-    const closeSidebar = ()=>{
+    const closeSidebar = () => {
         if (document.getElementById('home-body').classList.contains('sidebar-opened')) {
             document.getElementById('home-body').classList.remove('sidebar-opened')
         }
@@ -61,8 +60,8 @@ const Home = () => {
     useEffect(() => {
         if (user !== null) {
             const body = document.getElementsByTagName('body')[0]
-            user.result.darkTheme? body.classList.add('dark') : 
-            body.classList.remove('dark')
+            user.result.darkTheme ? body.classList.add('dark') :
+                body.classList.remove('dark')
         }
     }, [user])
 
@@ -92,9 +91,10 @@ const Home = () => {
             {
                 user ? (
                     <div className="home">
-                        <Header
-                            user={user.result}
-                        />
+
+                            <Header
+                                user={user.result}
+                            />
 
                         <div className="home-body" id='home-body'>
 
@@ -113,8 +113,8 @@ const Home = () => {
                         </div>
                     </div >
                 ) : (
-                        <Auth />
-                    )
+                    <Auth />
+                )
             }
         </>
     )

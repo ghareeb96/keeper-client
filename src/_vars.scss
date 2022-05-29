@@ -5,28 +5,26 @@ $primary-accent-color : #89a2f7;
 
 //* light theme colors
 $primary-bg-color-light : #ffffff;
-$secondary-bg-color-light : #f0f0f0;
+$secondary-bg-color-light : #ebebeb;
 $header-color-light : #f8f8f8;
 $text-color-light : #0f0f0f;
 $border-color-light : #A7A7A7;
-$note-color-light : #FFF475;
+$note-color-light : #fde454;
 $task-completed-color-light : #beffa6;
 $task-incompleted-color-light : #fcc4c4;
-$reminder-color-light : #a1c2ff;
-$reminder-passed-color-light : #fcc4c4;
+
 
 
 //* dark theme colors
 $primary-bg-color-dark : #202020;
-$secondary-bg-color-dark : #383838;
+$secondary-bg-color-dark : #3d3d3d;
 $header-color-dark : #1d1d1d ;
 $text-color-dark : #ececec;
 $border-color-dark : #C8C8C8;
-$note-color-dark : #6b6418;
+$note-color-dark : #918506;
 $task-completed-color-dark : #2b5a37;
 $task-incompleted-color-dark : #552f2f;
-$reminder-color-dark : #2f446e;
-$reminder-passed-color-dark : #552f2f; 
+ 
 
 //* Breakpoints
 $xLargeScreen : 1600px;

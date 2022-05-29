@@ -1,4 +1,4 @@
-const authReducer = (state = { authData: null , authError : null}, action) => {
+const authReducer = (state = { authData: null , authError : null, passwordChange: null }, action) => {
     switch (action.type) {
         case 'AUTH':
             localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
@@ -13,6 +13,12 @@ const authReducer = (state = { authData: null , authError : null}, action) => {
 
         case 'CLEAR_ERROR':
             return {...state, authError : null }
+        
+        case 'PASSWORD_CHANGED':
+            return {...state, passwordChange : action?.data }
+
+        case 'PASSWORD_CHANGE_ERROR':
+            return {...state, passwordChange : action?.data }
 
         case 'UPDATE_USER':
             const user = JSON.parse(localStorage.getItem('profile'))

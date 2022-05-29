@@ -7,12 +7,10 @@ import { updateUser } from '../../actions/auth';
 const Switcher = () => {
     const dispatch = useDispatch();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-
     const userData = useSelector(state => state.auth.authData)
 
     const toggleTheme = () => {
         dispatch(updateUser(user.result._id, { ...user.result, darkTheme: !user.result.darkTheme }))
-
     }
 
 
