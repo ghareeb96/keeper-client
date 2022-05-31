@@ -19,12 +19,10 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                padding: 0.4rem 0.8rem;
 
 
                 h4 {
                     font-size: 1.2rem;
-                    letter-spacing: 1px;
                 }
 
                 .profile-image {
@@ -56,12 +54,12 @@
 }
 
 
-@media screen and (max-width : $smallScreen){
+@media screen and (max-width : $smallScreen) {
     .header {
 
-
         .container {
-            padding : 0 30px;
+            padding: 0 30px;
+
             .profile-section {
                 display: none;
 
@@ -70,6 +68,7 @@
             .menu-btn {
                 display: block;
                 cursor: pointer;
+
                 .icon {
                     width: 20px;
                     height: 20px;

@@ -6,16 +6,21 @@
     width: 100%;
 
     .pass-successfull-change{
-        background-color: rgb(202, 202, 202) ;
+        background-color: rgb(53, 133, 21) ;
         transform: translateX(-50%);
-        color: rgb(13, 151, 13);
-        padding: 1rem 2rem;
+        color: white;
+        padding: 1rem 0.6rem;
+        text-align: center;
         font-size: 1.4rem;
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 10%;
         opacity: 0;
         transition: all 0.4s ease-out;
+        z-index: 5;
+        width: 80vw;
+        max-width: 400px;
+        pointer-events: none;
 
         &.active{
             opacity: 1;
@@ -24,16 +29,12 @@
 
     .btn {
         background-color: rgb(116, 116, 116);
-        padding: 0.4rem 0.6rem;
+        padding: 0.5rem 1.2rem;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: white;
-        letter-spacing: 1px;
         border-radius: 5px;
 
-        &#change-password {
-            width: 180px;
-        }
     }
 
 
@@ -107,12 +108,12 @@
             margin-top: auto;
 
             .change-password {
-                margin-left: auto;
+                margin-top: 1rem;
 
                 .password-modal {
                     opacity: 0;
                     pointer-events: none;
-                    position: absolute;
+                    position: fixed;
                     top: 0;
                     left: 0;
                     width: 100vw;
@@ -144,19 +145,18 @@
                             }
 
                             input {
+                                font-size: 1.5rem;
                                 width: 100%;
-                                padding: 0.4rem;
+                                padding: 0.2rem 0.5rem;
                                 color: #000;
                             }
                         }
 
                         .password-save-btn {
-                            padding: 0.4rem;
+                            padding: 1rem;
                             width: 100%;
                             background-color: $primary-accent-color;
                             font-size: 1rem;
-                            font-weight: 600;
-                            letter-spacing: 1px;
                             margin-top: 1rem;
                         }
 
@@ -175,7 +175,6 @@
             .name {
                 h2 {
                     font-size: 2rem;
-                    letter-spacing: 1px;
                 }
             }
 
@@ -213,20 +212,77 @@
     }
 }
 
-@media screen and (max-width : $xSmallScreen) {
+
+
+@media screen and (max-width : $smallScreen) {
     .profile {
+    
+        .pass-successfull-change{
 
-        .info-section {
+            font-size: 1rem;
+ 
+        }
 
-            .info {
-                h6 {
-                    font-size: 0.8rem;
+    
+        .upper-section {
+            flex-direction: column;
+            align-items: center;
+    
+            .profile-picture {
+                margin-right: 0;
+            }
+    
+            .name-password-btn {
+                height: auto;
+                width: 100%;
+                display: flex;
+                align-items: center;
+    
+                .name{
+                    margin: 1rem 0;
+                    h2{
+                        text-align: center;
+                    }
                 }
 
-                h2 {
-                    font-size: 1.2rem;
+                .change-password {
+                    margin-left: 0;
+                }  
+                
+            }
+        }
+    
+    }
+}
+    @media screen and (max-width : $xSmallScreen) {
+        .profile {
+            .upper-section {
+                .name-password-btn {
+                    .name{
+                        h2{
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+            .data-section {
+      
+                .profile-info {
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+                        width: 200px;
+                    }
+                    
+                    button{
+                        width: 200px;
+                        font-size: 0.8rem;
+                        margin-top: 10px;
+                    }
+        
                 }
             }
         }
-    }
 }

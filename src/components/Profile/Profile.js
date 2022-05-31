@@ -106,6 +106,7 @@ const Profile = () => {
                 document.querySelector(".pass-successfull-change").classList.add("active")
                 setPasswordData(initialState)
                 setTimeout(() => document.querySelector(".pass-successfull-change").classList.remove("active"), 5000);
+                dispatch({type: 'CLEAR_PASSWORD'})
             }
 
         }

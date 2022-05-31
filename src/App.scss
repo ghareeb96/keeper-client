@@ -28,7 +28,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: "roboto", sans-serif ;
 }
 
 html {
@@ -71,10 +71,6 @@ button {
     border: none;
     cursor: pointer;
     transition: 0.1s all ease-out;
-
-    &:active {
-        transform: scale(0.96);
-    }
 }
 
 input[type=text],
@@ -109,8 +105,6 @@ textarea {
 
     h2 {
         font-size: 2rem;
-        letter-spacing: 2px;
-
     }
 }
 
@@ -145,7 +139,7 @@ textarea {
                 width: 100%;
                 padding: 10px;
                 border-radius: 10px;
-                box-shadow: 1px 1px 4px;
+                box-shadow: 1px 1px 4px rgba(27, 27, 27, 0.418);
 
                 input,
                 textarea {
@@ -193,9 +187,7 @@ textarea {
 
                     button {
                         font-size: 1rem;
-                        letter-spacing: 1px;
-                        font-weight: 700;
-                        padding: 0.5rem 1rem;
+                        padding: 0.6rem 1rem;
                         background: lighten($primary-accent-color, 10);
                         width: 80px;
                         border-radius: 5px;
@@ -519,6 +511,7 @@ textarea {
     }
 
     .empty {
+        flex-direction: column;
 
         .icon {
             width: 40px;
@@ -527,12 +520,9 @@ textarea {
 
         .typo {
             line-height: 3rem;
+            text-align: center;
 
             h4 {
-                font-size: 1.5rem;
-            }
-
-            h5 {
                 font-size: 1.2rem;
             }
         }

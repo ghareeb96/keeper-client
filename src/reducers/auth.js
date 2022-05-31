@@ -17,6 +17,10 @@ const authReducer = (state = { authData: null , authError : null, passwordChange
         case 'PASSWORD_CHANGED':
             return {...state, passwordChange : action?.data }
 
+        case 'CLEAR_PASSWORD':
+            console.log("object")
+            return {...state, passwordChange : null }
+
         case 'PASSWORD_CHANGE_ERROR':
             return {...state, passwordChange : action?.data }
 

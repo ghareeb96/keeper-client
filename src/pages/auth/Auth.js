@@ -163,7 +163,7 @@ const Auth = () => {
                                     <button className="btn" onClick={handleFormSwitch}>Create an account</button>
                                 </div>
                                 <span>or</span>
-                                <div className="google-btn btn">
+                                <div className="google-btn">
                                     <GoogleLogin
                                         clientId='689278456234-9dt58abdin3vl7lj3c6b7mp0g47de3e0.apps.googleusercontent.com'
                                         render={(renderProps) => (

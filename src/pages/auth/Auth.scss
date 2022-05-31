@@ -40,6 +40,10 @@
 
             .logo-section {
                 height: 15%;
+                
+                h2, .icon{
+                    margin-top: auto;
+                }
                 h2{
                     color : #000;
                 }
@@ -67,16 +71,15 @@
                     }
 
                     h4 {
-                        font-size: 12px;
-                        margin-bottom: 4px;
-                        color: #222;
-                        letter-spacing: 1px;
+                        font-size: 0.8rem;
+                        margin-bottom: 8px;
+                        color: rgb(46, 46, 46);
                     }
 
                     input {
-                        font-size: 14px;
-                        padding: 0.5rem 0.4rem;
-                        margin-bottom: 12px;
+                        font-size: 1rem;
+                        padding: 0.8rem 0.5rem;
+                        margin-bottom: 1rem;
                         background: lighten($secondary-bg-color-light, 3);
                         border: 1px solid darken($secondary-bg-color-light, 20);
                     }
@@ -94,7 +97,7 @@
                 }
                 .btn {
                     width: 100%;
-                    padding : 0.7rem 0.4rem;
+                    padding : 0.8rem;
                     font-size: 1rem;
                     font-weight: 700;
                     letter-spacing: 1px;
@@ -107,7 +110,7 @@
                 .submit-btn {
 
                     .btn {
-                        font-size: 1.2rem;
+                        font-size: 1rem;
                         background-color: $primary-accent-color;
                         
                     }
@@ -117,7 +120,7 @@
                     text-align : center;
                     font-size : 1.2rem;
                     font-weight: 600;
-                    margin-top: 1rem;
+                    margin: 1rem 0;
 
                 }
 
@@ -131,6 +134,8 @@
                 }
 
                 .google-btn{
+                    padding: 0;
+
                     button{
                         display : flex;
                         align-items: center;
@@ -138,6 +143,7 @@
                         background: none;
                         border : 1px solid rgb(87, 87, 87);
                         margin-top: 0;
+                        width: 100%;
 
                         .google-icon{
                             margin-right : 12px;
