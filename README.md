@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Keeper
+Keeper is an App to takes and stores your notes and tasks with all the tasks functions with the CRUD Functionalities.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Keeper is a MERN stack App which implemented by React.js liberary with additional packages and liberaries such as react router, redux and more to handle the frontend part.
 
-## Available Scripts
+While the backend is implemented by node.js, Express.js and mongoDb. 
 
-In the project directory, you can run:
+The App uses the JWT for the loging functions.
 
-### `npm start`
+The App uses Axios to handle the Promises and connecting the frontend with the server.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Server is Deployed in Heroku, while the frontend is deployed in Github by gh-pages.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Demo: https://ghareeb96.github.io/keeper-client
 
-### `npm test`
+## Features
+* Storing notes with the ability to delete or update each note.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Keep you tasks and todos with the ability to complete any of it , update or delete.
 
-### `npm run build`
+* Adding a profile picture.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Regestration by Email or by Google Authintication token.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Light and Dark mode with a nice looking UI/UX
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies used 
 
-### `npm run eject`
+# FRONTEND
+* Html
+* Css
+* Javascript
+* Scss
+* React.js
+* Redux
+* React Router
+* Axios.js
+* Moment.js
+* JSON & AJAX
+* Using API & local Storage
+* gh-pages To publish the App on github
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# BACKEND
+* Node.js
+* Express.js
+* MongoDb
+* Mongoose
+* Bcrypt.js
+* JWT
+* Google Auth
+* Heroku (For Server deployment)
