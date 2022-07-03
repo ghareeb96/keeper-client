@@ -30,7 +30,7 @@ $task-incompleted-color-dark : #552f2f;
 $xLargeScreen : 1600px;
 $largeScreen : 1366px;
 $mediumScreen : 1024px;
-$smallScreen : 768px;
+$smallScreen : 820px;
 $xSmallScreen : 560px;
 
 //* Sizes
@@ -56,7 +56,7 @@ $sidebarWidth : 260px;
 
 @mixin itemWidth() {
     @media screen and (max-width: $mediumScreen) {
-        width : 60vw;
+        // width : 60vw;
     }
     
     

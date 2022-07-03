@@ -11,6 +11,7 @@ const Switcher = () => {
 
     const toggleTheme = () => {
         dispatch(updateUser(user.result._id, { ...user.result, darkTheme: !user.result.darkTheme }))
+        document.querySelector('.switch-container').classList.add('disable')
     }
 
 
@@ -26,13 +27,17 @@ const Switcher = () => {
             userData.result.darkTheme ?
                 toggler.classList.add('toggler-right') :
                 toggler.classList.remove('toggler-right')
+            document.querySelector('.switch-container').classList.remove('disable')
+
         }
-        else{
+        else {
             user.result.darkTheme ?
                 toggler.classList.add('toggler-right') :
                 toggler.classList.remove('toggler-right')
+            document.querySelector('.switch-container').classList.remove('disable')
+
         }
-    },[userData, user])
+    }, [userData, user])
 
 
     return (

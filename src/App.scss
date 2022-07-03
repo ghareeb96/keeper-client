@@ -110,9 +110,11 @@ textarea {
 
 .items-container {
     margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    gap: 1rem ;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    justify-items: center;
+
 }
 
 .tab-page {
@@ -187,13 +189,15 @@ textarea {
 
                     button {
                         font-size: 1rem;
-                        padding: 0.6rem 1rem;
-                        background: lighten($primary-accent-color, 10);
-                        width: 80px;
+                        padding: 0.6rem 1.6rem;
+                        background: darken($primary-accent-color, 20);
                         border-radius: 5px;
                         align-self: flex-end;
                         margin-top: auto;
                         margin-left: auto;
+                        font-weight: 600;
+                        color: rgb(255, 255, 255);
+                        letter-spacing: 2px;
                     }
                 }
             }
@@ -475,6 +479,7 @@ textarea {
 
 
 @media screen and(max-width : $smallScreen) {
+
     .modal {
 
         .item {
