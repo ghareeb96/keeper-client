@@ -44,10 +44,11 @@ export const signup = (formData) => async (dispatch) => {
         })
 
     } catch (error) {
-        dispatch({
-            type: 'AUTH_ERROR',
-            data: error.response.data.message
-        })
+        // dispatch({
+        //     type: 'AUTH_ERROR',
+        //     data: error.response.data.message
+        // })
+        console.log(error)
     }
 }
 
@@ -102,7 +103,7 @@ export const googleAuth = (formData) => async (dispatch) => {
         })
 
     } catch (error) {
-        if (error.response.status === 404) {
+        if (error.response?.status === 404) {
             try {
                 const {
                     data
@@ -122,7 +123,7 @@ export const googleAuth = (formData) => async (dispatch) => {
         } else {
             dispatch({
                 type: 'AUTH_ERROR',
-                data: error.response.data.message
+                data: error.response?.data.message
             })
         }
     }
