@@ -1,7 +1,7 @@
 # Keeper
 Keeper is an App to takes and stores your notes and tasks with all the tasks functions with the CRUD Functionalities.
 
-Keeper is a MERN stack App which implemented by React.js liberary with additional packages and liberaries such as react router, redux and more to handle the frontend part.
+Keeper is a MERN stack App which implemented by React.js library with additional packages and libraries such as react router, redux and more to handle the frontend part.
 
 While the backend is implemented by node.js, Express.js and mongoDb. 
 
